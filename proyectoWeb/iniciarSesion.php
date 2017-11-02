@@ -13,6 +13,27 @@
 </head>
 
 <body>
+<!--
+  <?php
+  /*
+        $user="postgres";
+        $password= "namavilo";
+        $dbname="Fifa_world_cup";
+        $port= "5432";
+        $host= "localhost";
+
+
+        $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+                
+        $conn = pg_connect($strconn) or die('{"estado":0}');
+
+        $query= "select * from user";
+        $results= pg_query( $conn,$query) ;
+
+            
+        pg_close($conn);*/
+  ?>
+-->
 
   <div class="form">
       
@@ -29,17 +50,15 @@
           <form action="/" method="post">
           
             <div class="field-wrap">
-            <label>
-              ID<span class="req">*</span>
-            </label>
-            <input id="idInicio" type="email"required autocomplete="off"/>
+            <?php 
+                echo "Id <input type='text' required name='idInicio'>";
+              ?>
           </div>
 
           <div class="field-wrap">
-            <label>
-              Contraseña<span class="req">*</span>
-            </label>
-            <input id="contraseñaInicio" type="password"required autocomplete="off"/>
+            <?php 
+                echo "Password <input type='password' required name='contraseñaInicio'>";
+              ?>
           </div>
 
 
@@ -52,48 +71,43 @@
         <div id="signup">   
           <h1>Enter your details</h1>
           
-          <form action="/" method="post">
+          <form action="iniciarSesionFuncion.php" method="post">
           
           <div class="top-row">
 
             <div class="field-wrap">
-              <label>
-                Id <span class="req">*</span>
-              </label>
-              <input id="idtxt" type="text" required autocomplete="off" />
+              <?php 
+                echo "Id <input type='text' name='idtxt'>";
+              ?>
             </div>
 
             <div class="field-wrap">
-              <label>
-                Nombre <span class="req">*</span>
-              </label>
-              <input id="nombretxt" type="text" required autocomplete="off" />
+              <?php 
+                echo "Name <input type='text' name='nombretxt'>";
+              ?>
             </div>
 
             <div class="field-wrap">
-              <label>
-                Apellidos <span class="req">*</span>
-              </label>
-              <input id="apellidostxt" type="text" required autocomplete="off" />
+              <?php 
+                echo "Lastname <input type='text' name='apellidostxt'>";
+              ?>
             </div>
           
             <div class="field-wrap">
-              <label>
-                Edad <span class="req">*</span>
-              </label>
-              <input id="edadtxt" type="text" required autocomplete="off" />
+              <?php 
+                echo "Age <input type='text' name='edadtxt'>";
+              ?>
             </div>          
           <div class="field-wrap">
-            <label>
-              Contraseña<span class="req">*</span>
-            </label>
-            <input id="contrasennatxt" type="password"required autocomplete="off"/>
+            <?php 
+                echo "Password <input type='password' name='contrasennatxt'>";
+              ?>
           </div>
 
 
           </div>
 
-        <h1> <a id="butRegistrarse" name="boton" href='index.html' style="font-size:40px" value="registro" target="_blank"  >¡Register!</a></h1> 
+        <h1> <a id="butRegistrarse" name="boton" href='index.html' style="font-size:40px" value="registro">¡Register!</a></h1> 
          <!--<button type="submit" class="button button-block"/>¡Registrarse!</button> -->
           
           </form>
