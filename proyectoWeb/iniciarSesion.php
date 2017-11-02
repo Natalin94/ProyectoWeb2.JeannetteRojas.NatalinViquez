@@ -14,27 +14,7 @@
 
 <body>
 
-  <?php
-  
-        $user="postgres";
-        $password= "namavilo";
-        $dbname="Fifa_world_cup";
-        $port= "5432";
-        $host= "localhost";
-
-
-        $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
-                
-        $conn = pg_connect($strconn) or die('{"estado":0}');
-
-        $query= "select * from user";
-        $results= pg_query( $conn,$query) ;
-
-            
-        pg_close($conn);
-  ?>
-
-
+ 
   <div class="form">
       
       <ul class="tab-group">
