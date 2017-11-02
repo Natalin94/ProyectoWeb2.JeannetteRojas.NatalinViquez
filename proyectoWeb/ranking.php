@@ -79,7 +79,7 @@
               <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="iniciarSesion.html">Log in</a>
+              <a class="nav-link text-uppercase text-expanded" href="indexPrincipal.html">Logout</a>
             </li>
           </ul>
         </div>
