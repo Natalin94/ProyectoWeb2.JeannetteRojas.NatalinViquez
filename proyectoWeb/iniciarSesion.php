@@ -51,13 +51,13 @@
           
             <div class="field-wrap">
             <?php 
-                echo "Id <input type='text' required name='idInicio'>";
+                echo "<input type='text' required name='idInicio'autocomplete='off' placeholder='Id'> ";
               ?>
           </div>
 
           <div class="field-wrap">
             <?php 
-                echo "Password <input type='password' required name='contraseñaInicio'>";
+                echo "<input type='password' required name='contraseñaInicio'autocomplete='off' placeholder='Password'>";
               ?>
           </div>
 
@@ -77,30 +77,30 @@
 
             <div class="field-wrap">
               <?php 
-                echo "Id <input type='text' name='idtxt'>";
+                echo "<input type='text' name='idtxt' autocomplete='off' placeholder='Id'>";
               ?>
             </div>
 
             <div class="field-wrap">
               <?php 
-                echo "Name <input type='text' name='nombretxt'>";
+                echo "<input type='text' name='nombretxt' autocomplete='off' placeholder='Name'>";
               ?>
             </div>
 
             <div class="field-wrap">
               <?php 
-                echo "Lastname <input type='text' name='apellidostxt'>";
+                echo "<input type='text' name='apellidostxt' autocomplete='off' placeholder='Lastname'>";
               ?>
             </div>
           
             <div class="field-wrap">
               <?php 
-                echo "Age <input type='text' name='edadtxt'>";
+                echo "<input type='text' name='edadtxt' autocomplete='off' placeholder='Age'>";
               ?>
             </div>          
           <div class="field-wrap">
             <?php 
-                echo "Password <input type='password' name='contrasennatxt'>";
+                echo "<input type='password' name='contrasennatxt' autocomplete='off' placeholder='Password'>";
               ?>
           </div>
 
