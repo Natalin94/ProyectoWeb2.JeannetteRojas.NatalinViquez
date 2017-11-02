@@ -55,7 +55,8 @@ $conn = pg_connect($strconn) or die('{"estado":0}');
 
 			$results= pg_query( $conn,$query) or die('{"estado":0}');
 
-			//echo '1';
+			$pagina2 = 'http://localhost/proyectoWeb/index.html'
+    		header("Location: $pagina2");
 		}
 	}
 
