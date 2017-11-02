@@ -95,20 +95,6 @@
         </h2>
         <hr class="divider">
         <div class="row">
-           <!-- <table class="egt">
-              <tr>
-                <th>Flag</th>
-                <th>Country</th>
-                <th>Confederation</th>
-                <th>Points</th>
-              </tr>
-              <tr>
-                <td>Img xxxxx</td>
-                <td>Pais xxxxx</td>
-                <td>Confederacion xxxx</td>
-                <td>Puntos</td>
-              </tr>
-            </table>   -->
 
             <?php
               echo " <table class='egt' border='2px>' cellpadding='15px' align='center'";
