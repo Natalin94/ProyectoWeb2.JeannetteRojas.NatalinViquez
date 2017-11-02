@@ -47,7 +47,7 @@
       <div id="login">   
           <h1>¡Welcome!</h1>
           
-          <form action="/" method="post">
+          <form action="iniciarSesionFuncion.php" method="post">
           
             <div class="field-wrap">
             <?php 
