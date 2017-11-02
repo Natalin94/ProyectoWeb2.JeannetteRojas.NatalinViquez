@@ -17,6 +17,7 @@ $conn = pg_connect($strconn) or die('{"estado":0}');
 
 if($_SERVER["REQUEST_METHOD"]== "POST")
 {	
+
 	$country= $_REQUEST["country"];
 	$boton = $_REQUEST["state"];
 
