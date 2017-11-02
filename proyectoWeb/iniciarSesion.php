@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<!--
+
   <?php
-  /*
+  
         $user="postgres";
         $password= "namavilo";
         $dbname="Fifa_world_cup";
@@ -31,9 +31,9 @@
         $results= pg_query( $conn,$query) ;
 
             
-        pg_close($conn);*/
+        pg_close($conn);
   ?>
--->
+
 
   <div class="form">
       
@@ -107,7 +107,7 @@
 
           </div>
 
-        <h1> <a id="butRegistrarse" name="boton" href='index.html' style="font-size:40px" value="registro">¡Register!</a></h1> 
+        <h1> <a id="butRegistrarse" name="boton" style="font-size:40px"  onclick="agregarUsuario()" value="registro">¡Register!</a></h1> 
          <!--<button type="submit" class="button button-block"/>¡Registrarse!</button> -->
           
           </form>

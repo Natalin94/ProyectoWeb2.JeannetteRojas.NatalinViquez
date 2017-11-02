@@ -11,16 +11,18 @@ $host= "localhost";
 $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
         
 $conn = pg_connect($strconn) or die('{"estado":0}');
-
-
-//$tipo= $_REQUEST["tipo"];
 	
-	$idInicio= $_REQUEST["idtxt"];
-	$contraseñaInicio = $_REQUEST["contrasennatxt"];
-	$boton = $_REQUEST["boton"];
+	
+	if( $_REQUEST["tipo"] == "login"){
 
-	if( $_REQUEST["boton"] == "login"){
-		$row=pg_query("SELECT * FROM user WHERE idtxt='$idInicio' AND contrasennatxt ='$contraseñaInicio'");
+		$idInicio= $_REQUEST["idtxt"];
+		$contraseñaInicio = $_REQUEST["contrasennatxt"];
+		//$boton = $_REQUEST["boton"];
+
+		$query= "select * from usuario where username = '$idInicio' and contraseña='$contraseñaInicio '";
+
+		$results= pg_query( $conn,$query) or die('{"estado":0}');
+		//$row=pg_query("SELECT * FROM user WHERE idtxt='$idInicio' AND contrasennatxt ='$contraseñaInicio'");
 
 	if(pg_fetch_array($row)>0)
 	{
@@ -31,8 +33,6 @@ $conn = pg_connect($strconn) or die('{"estado":0}');
   	{
     echo "No se pudo conectar al Servidor de Base de Datos";
  	}
-
-	$results= pg_query( $conn,$query) or die('{"estado":0}');
 
    exit;
 	}
