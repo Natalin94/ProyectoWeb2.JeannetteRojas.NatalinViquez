@@ -17,16 +17,16 @@ $tipo= $_REQUEST["tipo"];
 
 if($tipo=="insertar")
 {
-	$idtxt= $_REQUEST["idtxt"];
-	$nombretxt=$_REQUEST["nombretxt"];
-	$apellidostxt= $_REQUEST["apellidostxt"];
-	$edadtxt= $_REQUEST["edadtxt"];
-	$contrasennatxt = $_REQUEST["contrasennatxt"];
+	$idtxt= $_REQUEST["id"];
+	$nombretxt=$_REQUEST["name"];
+	$apellidostxt= $_REQUEST["lastname"];
+	$edadtxt= $_REQUEST["age"];
+	$contrasennatxt = $_REQUEST["password"];
 	$fecha = date("d");
 	$hora = time();
 
 
-	$query= "insert into user values ('$idtxt','$nombretxt','$apellidostxt','$edadtxt','$contrasennatxt','$fecha','$hora')";
+	$query= "insert into usuario values ('$nombretxt','$apellidostxt','$edadtxt','$idtxt','$contrasennatxt','2008/12/31')";
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
 

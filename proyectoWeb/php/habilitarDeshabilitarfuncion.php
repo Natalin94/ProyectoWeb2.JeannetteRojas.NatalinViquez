@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST")
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
 
-   $extra='http://localhost/proyectoWeb/habilitarDeshabilitar.php';
+   $extra='http://localhost/ProyectoWeb2.JeannetteRojas.NatalinViquez/proyectoWeb/habilitarDeshabilitar.php';
    header("location: $extra");
    exit;
 }

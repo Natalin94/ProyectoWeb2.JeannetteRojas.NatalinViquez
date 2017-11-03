@@ -76,7 +76,7 @@ function actualizarEquipos()
 
 //IMPLEMENTACION DEL PHP
   var peticion = obtenerXHR(); 
-  url="../proyectoWeb/php/actualizarEquipos.php?tipo=insertar";
+  url="../proyectoWeb/php/agregarEquipos.php?tipo=insertar";
   url+="&country="+country;
   url+="&points="+points;
   url+="&flag="+flag;
@@ -113,20 +113,22 @@ function agregarUsuario()
 //IMPLEMENTACION DEL PHP
   var peticion = obtenerXHR();
    
-  url="../proyectoWeb/php/iniciarSesionFuncion.php?tipo=insertarU";
+  url="../proyectoWeb/php/agregarUsuario.php?tipo=insertar";
   url+="&id="+id;
   url+="&name="+name;
   url+="&lastname="+lastname;
   url+="&age="+age;
   url+="&password="+password;
-
+  debugger;
   peticion.open("GET", url , true); 
   peticion.onreadystatechange=function ()
-    {debugger;
+    {
+      debugger;
       if (peticion.readyState==4)
       {
         if (peticion.status==200)
         {
+
           if (peticion.responseText===1)
           {
             alert ("si se pudo insertar");
@@ -136,7 +138,7 @@ function agregarUsuario()
     };
     
   peticion.send(null);
-  debugger;
+  
   
   document.getElementById("form1").reset();
 }
