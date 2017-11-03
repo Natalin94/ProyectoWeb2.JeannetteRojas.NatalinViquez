@@ -199,7 +199,7 @@
       <div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
           <li class="page-item">
-            <a class="page-link" href="#">Next &rarr; </a>
+            <a class="page-link" href="raffle.html">Next &rarr; </a>
           </li>
 
         </ul>

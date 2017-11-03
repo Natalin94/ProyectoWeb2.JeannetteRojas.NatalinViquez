@@ -24,6 +24,35 @@
 
   <body>
 
+    <?php
+
+
+        $user="postgres";
+        $password= "namavilo";
+        $dbname="Fifa_world_cup";
+        $port= "5432";
+        $host= "localhost";
+
+
+        $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+                
+        $conn = pg_connect($strconn) or die('{"estado":0}');
+
+        $query= "select * from teams";
+        $results= pg_query( $conn,$query) ;
+
+        $query2= "select * from teams";
+        $results2= pg_query( $conn,$query2) ;
+
+        $query3= "select * from teams";
+        $results3= pg_query( $conn,$query) ;
+
+        $query4= "select * from teams";
+        $results4= pg_query( $conn,$query) ;
+            
+        pg_close($conn);
+    ?>
+
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Repechage</div>
 
@@ -74,13 +103,69 @@
         <hr class="divider">
         <div class="row">
           <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="img/slide-2.jpg" alt="">
+          <table class="egt">
+
+            <tr>
+
+              <td> <?php
+                echo "<select id='country'>";
+                    while ($row = pg_fetch_row($results)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?></td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country'>";
+                    
+                    while ($row = pg_fetch_row($results2)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+                ?></td>
+
+            </tr>
+
+            <tr>
+
+              <td><?php
+                echo "<select id='country'>";
+                    while ($row = pg_fetch_row($results3)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country'>";
+                    
+                    while ($row = pg_fetch_row($results4)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+
+
+                ?></td>
+            </tr>
+
+          </table>
           </div>
-          <div class="col-lg-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam soluta dolore voluptatem, deleniti dignissimos excepturi veritatis cum hic sunt perferendis ipsum perspiciatis nam officiis sequi atque enim ut! Velit, consectetur.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur perspiciatis reprehenderit illo et vitae iste provident debitis quos corporis saepe deserunt ad, officia, minima natus molestias assumenda nisi velit?</p>
-          </div>
-        </div>
       </div>
 
       <div class="bg-faded p-4 my-4">
