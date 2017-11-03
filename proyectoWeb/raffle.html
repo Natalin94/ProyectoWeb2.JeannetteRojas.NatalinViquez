@@ -24,6 +24,19 @@
 
   <body>
 
+    <script>
+    function changeImage(cual,url) {
+      var imagen1 = "img/bomboEquipoAnfitrion.PNG";
+      var imagen2 = "img/bombo7Equipos.PNG";
+      var imagenactual = cual.src;
+      if(imagenactual==imagen1) {
+        cual. src = imagen2;
+      } else  {
+        cual. src = imagen1;
+      }
+    }
+    </script>
+
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Raffle</div>
 
@@ -71,13 +84,13 @@
         <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos</h2>
         <table >
         <tr>
-        <td> <img height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
-        <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img onclick="changeImage(this)", id="myImage" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
+        <td> <img  id="myImage" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         </tr>
         <tr>
-          <td><quote> <button>Calcular</button></td>
+          <td><button onclick="changeImage(this)" >Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
