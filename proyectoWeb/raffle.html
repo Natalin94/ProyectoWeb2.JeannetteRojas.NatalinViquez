@@ -20,22 +20,29 @@
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
 
+    <SCRIPT LANGUAGE="JavaScript">
+mi_imagen1=new Image
+mi_imagen1.src="img/bomboEquipoAnfitrion.PN"
+mi_imagen2=new Image
+mi_imagen2.src="img/bombo7Equipos.PNG"
+var i=1;
+function cambia_imagen() {                      
+   if (i == 1)
+      {
+      document.images['prueba'].src=mi_imagen2.src
+      i=2;
+      }
+   else
+      {
+      document.images['prueba'].src=mi_imagen1.src;
+      i=1;
+      }
+   }
+</script>
+
   </head>
 
   <body>
-
-    <script>
-    function changeImage(cual,url) {
-      var imagen1 = "img/bomboEquipoAnfitrion.PNG";
-      var imagen2 = "img/bombo7Equipos.PNG";
-      var imagenactual = cual.src;
-      if(imagenactual==imagen1) {
-        cual. src = imagen2;
-      } else  {
-        cual. src = imagen1;
-      }
-    }
-    </script>
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Raffle</div>
@@ -84,13 +91,13 @@
         <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos</h2>
         <table >
         <tr>
-        <td> <img onclick="changeImage(this)", id="myImage" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
-        <td> <img  id="myImage" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img name="prueba" onMousedown="cambia_imagen()" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
+        <td> <img id="myImage" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         </tr>
         <tr>
-          <td><button onclick="changeImage(this)" >Calcular</button></td>
+          <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
@@ -112,16 +119,56 @@
 
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-          <img class="card-img img-fluid w-100" src="img/slide-3.jpg" alt="">
-          <div class="card-img-overlay bg-overlay">
-            <h2 class="card-title text-shadow text-white text-uppercase mb-0">Grupos</h2>
-            <h4 class="text-shadow text-white">--</h4>
-            <p class="lead card-text text-shadow text-white w-50 d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellat provident quo aliquam eius ea, animi porro magnam totam dolor nam error quas labore eveniet dicta nostrum inventore veniam. Ipsam?</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </div>
+          <h2 class="card-title text-shadow text-white text-uppercase mb-0">Grupos</h2>
+          <table >
+            <tr>
+              <td>
+                <table width="100" align="center"border="1">
+                  <tr>
+                    <td> 1 </td>    
+                    <td> pais </td>                                     
+                  </tr>
+                  <tr>
+                    <td> 2 </td>    
+                    <td> pais </td>                                        
+                  </tr>
+                  <tr>
+                    <td> 3 </td>    
+                    <td> pais </td>                                        
+                  </tr>
+                  <tr>
+                    <td> 4 </td>    
+                    <td> pais </td>                                         
+                  </tr>
+                </table>
+              </td>
+              <br>
+              <td>
+                <table width="100" align="center"border="1">
+                  <tr>
+                    <td> 1 </td>    
+                    <td> pais </td>                                     
+                  </tr>
+                  <tr>
+                    <td> 2 </td>    
+                    <td> pais </td>                                        
+                  </tr>
+                  <tr>
+                    <td> 3 </td>    
+                    <td> pais </td>                                        
+                  </tr>
+                  <tr>
+                    <td> 4 </td>    
+                    <td> pais </td>                                         
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
 
+<<<<<<< HEAD
       <!-- Pagination -->
       <div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
@@ -131,6 +178,8 @@
         </ul>
       </div>
 
+=======
+>>>>>>> origin/master
     </div>
     <!-- /.container -->
 
