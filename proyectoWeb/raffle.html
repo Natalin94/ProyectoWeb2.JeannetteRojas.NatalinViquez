@@ -19,40 +19,46 @@
 
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <!--
+    
     <script>
       function changeImage1() {
       var image = document.getElementById('myImage');
-      if (image.src.match("bombo7")) {
-          image.src = "img/bomboEquipoAnfitrion.PNG";
-      } else {
+      if (image.src.match("bomboEquipoAnfitrion")) {
           image.src = "img/bombo7Equipos.PNG";
+      } else {
+          image.src = "img/bomboEquipoAnfitrion.PNG";
       }
+      //changeImage2();
+
     }
     function changeImage2() {
       var image = document.getElementById('myImage');
-      if (image.src.match("bombo6")) {
+      if (image.src.match("bomboEquipoAnfitrion")) {
           image.src = "img/bombo7Equipos.PNG";
+
       } else {
           image.src = "img/bombo6Equipos.PNG";
+          //changeImage3();
       }
+      
     }
     function changeImage3() {
       var image = document.getElementById('myImage');
       if (image.src.match("bombo6")) {
-          image.src = "img/bombo6Equipos.PNG";
+          image.src = "img/bombo5Equipos.PNG";
       } else {
-          image.src = "img/bombo7Equipos.PNG";
+          image.src = "img/bombo6Equipos.PNG";
 
       }
     }
     </script>
-  -->  
+   
 
   </head>
 
   <body>
 
+<!--
     <script type="text/javascript">
       function clickButton(){      
       if (document.getElementById('imagen').src == 'img/bomboEquipoAnfitrion.PNG'){
@@ -61,7 +67,7 @@
         document.getElementById('imagen').src = 'img/bomboEquipoAnfitrion.PNG';}
       }
     </script>
-    
+    -->
 
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
@@ -111,7 +117,7 @@
         <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos Equipos</h2>
         <table >
         <tr>
-        <td> <img id="imagen" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
+        <td> <img id="myImage" onclick="changeImage1()" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
         <td> <img id="imagen" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
