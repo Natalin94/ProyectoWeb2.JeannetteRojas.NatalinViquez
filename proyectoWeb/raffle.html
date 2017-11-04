@@ -18,57 +18,177 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/business-casual.css" rel="stylesheet">
-    
-    <script>
-      function changeImage1() {
-      var image = document.getElementById('myImage');
-      if (image.src.match("bomboEquipoAnfitrion")) {
-          image.src = "img/bombo7Equipos.PNG";
-      } else {
-          image.src = "img/bomboEquipoAnfitrion.PNG";
-      }
-      //changeImage2();
-
-    }
-    function changeImage2() {
-      var image = document.getElementById('myImage');
-      if (image.src.match("bomboEquipoAnfitrion")) {
-          image.src = "img/bombo7Equipos.PNG";
-
-      } else {
-          image.src = "img/bombo6Equipos.PNG";
-          //changeImage3();
-      }
-      
-    }
-    function changeImage3() {
-      var image = document.getElementById('myImage');
-      if (image.src.match("bombo6")) {
-          image.src = "img/bombo5Equipos.PNG";
-      } else {
-          image.src = "img/bombo6Equipos.PNG";
-
-      }
-    }
-    </script>
-   
+    <link href="css/business-casual.css" rel="stylesheet">   
 
   </head>
 
   <body>
 
-<!--
     <script type="text/javascript">
-      function clickButton(){      
-      if (document.getElementById('imagen').src == 'img/bomboEquipoAnfitrion.PNG'){
-        document.getElementById('imagen').src = 'img/bombo7Equipos.PNG';}
-      else{
-        document.getElementById('imagen').src = 'img/bomboEquipoAnfitrion.PNG';}
+      //funcion que escoge el equipo y la posicion de los primeros bombos
+      var numeroImagenActual1 =1;
+      var primerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+      var primerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
+      function moverImagenEquipos1(movimiento) { 
+      if (numeroImagenActual1 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
+      document.getElementById('imgCarrusel1').src = 'img/bombo7Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion7.png';
       }
+      if (numeroImagenActual1 == 2 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo6Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion6.png';
+      }
+      if (numeroImagenActual1 == 3 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo5Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion5.png';
+      }
+      if (numeroImagenActual1 == 4 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo4Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion4.png';
+      }
+      if (numeroImagenActual1 == 5 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo3Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion3.png';
+      }
+      if (numeroImagenActual1 == 6 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo2Equipos.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion2.png';
+      }
+      if (numeroImagenActual1 == 7 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bombo1Equipo.png';
+      document.getElementById('imgCarruselP1').src = 'img/posicion1.png';
+      }
+      if (numeroImagenActual1 == 8 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel1').src = 'img/bomboVacio.png';
+      document.getElementById('imgCarruselP1').src = 'img/bomboVacio.png';
+      }
+      if (numeroImagenActual1 == 9 && movimiento == 'adelante') {
+      alert ('No es posible hacer ese movimiento');
+      }
+      numeroImagenActual1 +=1;
+      }
+      //funcion que escoge el equipo y la posicion de los segundos bombos
+      var numeroImagenActual2 =1;
+      function moverImagenEquipos2(movimiento) { 
+      if (numeroImagenActual2 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
+      document.getElementById('imgCarrusel2').src = 'img/bombo7Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion7.png';
+      }
+      if (numeroImagenActual2 == 2 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo6Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion6.png';
+      }
+      if (numeroImagenActual2 == 3 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo5Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion5.png';
+      }
+      if (numeroImagenActual2 == 4 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo4Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion4.png';
+      }
+      if (numeroImagenActual2 == 5 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo3Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion3.png';
+      }
+      if (numeroImagenActual2 == 6 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo2Equipos.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion2.png';
+      }
+      if (numeroImagenActual2 == 7 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bombo1Equipo.png';
+      document.getElementById('imgCarruselP2').src = 'img/posicion1.png';
+      }
+      if (numeroImagenActual2 == 8 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel2').src = 'img/bomboVacio.png';
+      document.getElementById('imgCarruselP2').src = 'img/bomboVacio.png';
+      }
+      if (numeroImagenActual2 == 9 && movimiento == 'adelante') {
+      alert ('No es posible hacer ese movimiento');
+      }
+      numeroImagenActual2 +=1;
+      }
+      //funcion que escoge el equipo y la posicion de los terceros bombos
+      var numeroImagenActual3 =1;
+      function moverImagenEquipos3(movimiento) { 
+      if (numeroImagenActual3 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
+      document.getElementById('imgCarrusel3').src = 'img/bombo7Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion7.png';
+      }
+      if (numeroImagenActual3 == 2 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo6Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion6.png';
+      }
+      if (numeroImagenActual3 == 3 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo5Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion5.png';
+      }
+      if (numeroImagenActual3 == 4 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo4Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion4.png';
+      }
+      if (numeroImagenActual3 == 5 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo3Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion3.png';
+      }
+      if (numeroImagenActual3 == 6 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo2Equipos.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion2.png';
+      }
+      if (numeroImagenActual3 == 7 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bombo1Equipo.png';
+      document.getElementById('imgCarruselP3').src = 'img/posicion1.png';
+      }
+      if (numeroImagenActual3 == 8 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel3').src = 'img/bomboVacio.png';
+      document.getElementById('imgCarruselP3').src = 'img/bomboVacio.png';
+      }
+      if (numeroImagenActual3 == 9 && movimiento == 'adelante') {
+      alert ('No es posible hacer ese movimiento');
+      }
+      numeroImagenActual3 +=1;
+      }
+      //funcion que escoge el equipo y la posicion de los cuartos bombos
+      var numeroImagenActual4 =1;
+      function moverImagenEquipos4(movimiento) { 
+      if (numeroImagenActual4 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
+      document.getElementById('imgCarrusel4').src = 'img/bombo7Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion7.png';
+      }
+      if (numeroImagenActual4 == 2 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo6Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion6.png';
+      }
+      if (numeroImagenActual4 == 3 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo5Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion5.png';
+      }
+      if (numeroImagenActual4 == 4 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo4Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion4.png';
+      }
+      if (numeroImagenActual4 == 5 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo3Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion3.png';
+      }
+      if (numeroImagenActual4 == 6 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo2Equipos.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion2.png';
+      }
+      if (numeroImagenActual4 == 7 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bombo1Equipo.png';
+      document.getElementById('imgCarruselP4').src = 'img/posicion1.png';
+      }
+      if (numeroImagenActual4 == 8 && movimiento == 'adelante') {
+      document.getElementById('imgCarrusel4').src = 'img/bomboVacio.png';
+      document.getElementById('imgCarruselP4').src = 'img/bomboVacio.png';
+      }
+      if (numeroImagenActual4 == 9 && movimiento == 'adelante') {
+      alert ('No es posible hacer ese movimiento');
+      }
+      numeroImagenActual4 +=1;
+      }
+      
     </script>
-    -->
-
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Raffle</div>
@@ -117,17 +237,16 @@
         <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos Equipos</h2>
         <table >
         <tr>
-        <td> <img id="myImage" onclick="changeImage1()" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
-        <td> <img id="imagen" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
-        <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
-        <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img id="imgCarrusel1" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
+        <td> <img id="imgCarrusel2" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img id="imgCarrusel3" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img id="imgCarrusel4" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         </tr>
         <tr>
-
-          <td><button id = "demo" type="button" onclick="clickButton()">Calcular</button></td>
-          <td><button>Calcular</button></td>
-          <td><button>Calcular</button></td>
-          <td><button>Calcular</button></td>
+          <td><button id = "adelante" onclick="moverImagenEquipos1('adelante')" type="button">Seleccionar equipo y posicion</button></td>
+          <td><button id="adelante" onclick="moverImagenEquipos2('adelante')" type="button">Seleccionar equipo y posicion</button></td>
+          <td><button id="adelante" onclick="moverImagenEquipos3('adelante')" type="button">Seleccionar equipo y posicion</button></td>
+          <td><button id="adelante" onclick="moverImagenEquipos4('adelante')" type="button">Seleccionar equipo y posicion</button></td>
         </tr>
         </table>
         <br>
@@ -135,10 +254,10 @@
         <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos Posiciones</h2>
          <table>
         <tr>
-        <td> <img height="230" width="230" src="img/posicion8.PNG" /> </td>
-        <td> <img height="230" width="230" src="img/posicion8.PNG"/> </td>
-        <td> <img height="230" width="230" src="img/posicion8.PNG"/> </td>
-        <td> <img height="230" width="230" src="img/posicion8.PNG"/> </td>
+        <td> <img id="imgCarruselP1" height="230" width="230" src="img/posicion8.PNG" /> </td>
+        <td> <img id="imgCarruselP2" height="230" width="230" src="img/posicion8.PNG"/> </td>
+        <td> <img id="imgCarruselP3" height="230" width="230" src="img/posicion8.PNG"/> </td>
+        <td> <img id="imgCarruselP4" height="230" width="230" src="img/posicion8.PNG"/> </td>
         </tr>
         </table>
         
