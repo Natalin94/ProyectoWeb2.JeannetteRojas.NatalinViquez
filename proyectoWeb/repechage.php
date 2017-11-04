@@ -24,6 +24,48 @@
 
   <body>
 
+        <script language="javascript">
+       function cargar_al_input(valor, espacio) {
+        debugger;
+       
+        var txt = document.getElementById(espacio.id);
+        txt.value = valor;
+       }
+
+
+       function resultadoJuego(campo1, campo2, campo3, campo4, resultado) {
+        debugger;
+          var juego1 = Math.floor((Math.random() * 7) + 1);
+          var juego2 = Math.floor((Math.random() * 7) + 1);
+          var juego3 = Math.floor((Math.random() * 7) + 1);
+          var juego4 = Math.floor((Math.random() * 7) + 1);
+
+          var txt = document.getElementById(campo1.id);
+          txt.value = juego1;
+
+          var txt = document.getElementById(campo2.id);
+          txt.value = juego2;
+
+          var txt = document.getElementById(campo3.id);
+          txt.value = juego3;
+
+          var txt = document.getElementById(campo4.id);
+          txt.value = juego4; 
+
+          uno= juego1+ juego4;
+          dos= juego2+ juego3;  
+
+          if (juego1+ juego4 >= juego2 + juego3){
+            document.getElementById(resultado.id).innerHTML = "The winner is: El primero"+ uno+ " " + dos + country.value;
+          } 
+
+          else{
+             document.getElementById(resultado.id).innerHTML = "The winner is: El otro"+ uno+ " " + dos;
+          }   
+      }
+    </script>
+
+
     <?php
 
 
@@ -41,14 +83,17 @@
         $query= "select * from teams";
         $results= pg_query( $conn,$query) ;
 
-        $query2= "select * from teams";
-        $results2= pg_query( $conn,$query2) ;
-
-        $query3= "select * from teams";
+        $results2= pg_query( $conn,$query) ;
         $results3= pg_query( $conn,$query) ;
-
-        $query4= "select * from teams";
         $results4= pg_query( $conn,$query) ;
+        $results5= pg_query( $conn,$query) ;
+        $results6= pg_query( $conn,$query) ;
+        $results7= pg_query( $conn,$query) ;
+        $results8= pg_query( $conn,$query) ;
+        $results9= pg_query( $conn,$query) ;
+        $results10= pg_query( $conn,$query) ;
+        $results11= pg_query( $conn,$query) ;
+        $results12= pg_query( $conn,$query) ;
             
         pg_close($conn);
     ?>
@@ -93,22 +138,30 @@
       </div>
     </nav>
 
+    <style type="text/css">
+    .divCuadros{
+      padding: 60px;
+    }
+    </style>
+
     <div class="container">
 
       <div class="bg-faded p-4 my-4">
+      <div class="bg-faded p-4 my-4">
         <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">About
-          <strong>Business Casual</strong>
+        <h2 class="text-center text-lg text-uppercase my-0">Our
+          <strong>Team</strong>
         </h2>
         <hr class="divider">
-        <div class="row">
-          <div class="col-lg-6">
-          <table class="egt">
 
+        <div class="row">
+          <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
             <tr>
 
               <td> <?php
-                echo "<select id='country'>";
+                echo "<select name='country' onchange='cargar_al_input(this.value, texto2)'>";
                     while ($row = pg_fetch_row($results)) {
                         echo "<option>";
                         echo $row[0];
@@ -116,12 +169,12 @@
                     }
                     
                     echo "</select>";
-                    echo "<input type='text' disabled='disabled' size='2'/>";
+                    echo "<input id='campo1' type='text' disabled='disabled' size='2'/>";
                 ?></td>
 
               <td> <?php
-                echo "<input type='text' disabled='disabled' size='2'/>";
-                echo "<select id='country'>";
+                echo "<input id='campo2' type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country2' onchange='cargar_al_input(this.value, texto1)'>";
                     
                     while ($row = pg_fetch_row($results2)) {
                         echo "<option>";
@@ -130,13 +183,36 @@
                     }
                     echo "</select>";
                 ?></td>
-
             </tr>
-
             <tr>
 
               <td><?php
-                echo "<select id='country'>";
+                    
+                    echo "<input id='texto1' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input id='campo3' type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input onclick="resultadoJuego(campo1, campo2, campo3, campo4, resultado1)" type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input  id='campo4' type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto2' type='text' disabled='disabled' size='10.7'/>";
+
+                ?></td>
+            </tr>
+          </table>
+          <p id="resultado1"></p>
+            </div>
+          </div> **
+
+          <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
+            <tr>
+
+              <td> <?php
+                echo "<select name='country3' onchange='cargar_al_input(this.value, texto4)'>";
                     while ($row = pg_fetch_row($results3)) {
                         echo "<option>";
                         echo $row[0];
@@ -145,13 +221,11 @@
                     
                     echo "</select>";
                     echo "<input type='text' disabled='disabled' size='2'/>";
-                ?>
-                <input type="submit" value="play">
-              </td>
+                ?></td>
 
               <td> <?php
                 echo "<input type='text' disabled='disabled' size='2'/>";
-                echo "<select id='country'>";
+                echo "<select id='country4' onchange='cargar_al_input(this.value, texto3)'>";
                     
                     while ($row = pg_fetch_row($results4)) {
                         echo "<option>";
@@ -159,56 +233,259 @@
                         echo "</option>";
                     }
                     echo "</select>";
+                ?></td>
+            </tr>
+            <tr>
 
+              <td><?php
+                    
+                    echo "<input id='texto3' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input   type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto4' type='text' disabled='disabled' size='10.7'/>";
 
                 ?></td>
             </tr>
-
           </table>
+         
+            </div>
           </div>
-      </div>
 
-      <div class="bg-faded p-4 my-4">
-        <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Our
-          <strong>Team</strong>
-        </h2>
-        <hr class="divider">
-        <div class="row">
-          <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
-            </div>
-          </div>
+       
         </div>
       </div>
 
     </div>
+
+
+      <div class="bg-faded p-4 my-4">
+      
+
+      <div class="bg-faded p-4 my-4">
+        <hr class="divider">
+        <h2 class="text-center text-lg text-uppercase my-0">UEFA Repechage</h2>
+        <hr class="divider">
+
+        <div class="row">
+            <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
+            <tr>
+
+              <td> <?php
+                echo "<select name='country5' onchange='cargar_al_input(this.value, texto6)'>";
+                    while ($row = pg_fetch_row($results5)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?></td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country6' onchange='cargar_al_input(this.value, texto5)'>";
+                    
+                    while ($row = pg_fetch_row($results6)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+                ?></td>
+            </tr>
+            <tr>
+
+              <td><?php
+                    
+                    echo "<input id='texto5' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input   type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto6' type='text' disabled='disabled' size='10.7'/>";
+
+                ?></td>
+            </tr>
+          </table>
+         
+            </div>
+          </div>
+
+            <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
+            <tr>
+
+              <td> <?php
+                echo "<select name='country7' onchange='cargar_al_input(this.value, texto8)'>";
+                    while ($row = pg_fetch_row($results7)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?></td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country8' onchange='cargar_al_input(this.value, texto7)'>";
+                    
+                    while ($row = pg_fetch_row($results8)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+                ?></td>
+            </tr>
+            <tr>
+
+              <td><?php
+                    
+                    echo "<input id='texto7' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input   type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto8' type='text' disabled='disabled' size='10.7'/>";
+
+                ?></td>
+            </tr>
+          </table>
+         
+            </div>
+          </div>
+
+
+
+          <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
+            <tr>
+
+              <td> <?php
+                echo "<select name='country9' onchange='cargar_al_input(this.value, texto10)'>";
+                    while ($row = pg_fetch_row($results9)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?></td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country10' onchange='cargar_al_input(this.value, texto9)'>";
+                    
+                    while ($row = pg_fetch_row($results10)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+                ?></td>
+            </tr>
+            <tr>
+
+              <td><?php
+                    
+                    echo "<input id='texto9' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input   type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto10' type='text' disabled='disabled' size='10.7'/>";
+
+                ?></td>
+            </tr>
+          </table>
+         
+            </div>
+          </div>
+
+
+          <div width="100px" class="divCuadros" >
+            <div >
+            <table class="egt">
+            <tr>
+
+              <td> <?php
+                echo "<select name='country11' onchange='cargar_al_input(this.value, texto12)'>";
+                    while ($row = pg_fetch_row($results12)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    
+                    echo "</select>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?></td>
+
+              <td> <?php
+                echo "<input type='text' disabled='disabled' size='2'/>";
+                echo "<select id='country12' onchange='cargar_al_input(this.value, texto11)'>";
+                    
+                    while ($row = pg_fetch_row($results11)) {
+                        echo "<option>";
+                        echo $row[0];
+                        echo "</option>";
+                    }
+                    echo "</select>";
+                ?></td>
+            </tr>
+            <tr>
+
+              <td><?php
+                    
+                    echo "<input id='texto11' type='text' disabled='disabled' size='10.7'/>";
+                    echo "<input type='text' disabled='disabled' size='2'/>";
+                ?>
+                <input type="submit" value="play">
+              </td>
+
+              <td> <?php
+
+                echo "<input   type='text' disabled='disabled' size='2'/>";
+                echo "<input id='texto12' type='text' disabled='disabled' size='10.7'/>";
+
+                ?></td>
+            </tr>
+          </table>
+         
+            </div>
+          </div>
+
+       
+        </div>
+      </div>
+
+    </div>
+
     <!-- /.container -->
 
     <footer class="bg-faded text-center py-5">
