@@ -19,30 +19,50 @@
 
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">
+    <!--
+    <script>
+      function changeImage1() {
+      var image = document.getElementById('myImage');
+      if (image.src.match("bombo7")) {
+          image.src = "img/bomboEquipoAnfitrion.PNG";
+      } else {
+          image.src = "img/bombo7Equipos.PNG";
+      }
+    }
+    function changeImage2() {
+      var image = document.getElementById('myImage');
+      if (image.src.match("bombo6")) {
+          image.src = "img/bombo7Equipos.PNG";
+      } else {
+          image.src = "img/bombo6Equipos.PNG";
+      }
+    }
+    function changeImage3() {
+      var image = document.getElementById('myImage');
+      if (image.src.match("bombo6")) {
+          image.src = "img/bombo6Equipos.PNG";
+      } else {
+          image.src = "img/bombo7Equipos.PNG";
 
-    <SCRIPT LANGUAGE="JavaScript">
-mi_imagen1=new Image
-mi_imagen1.src="img/bomboEquipoAnfitrion.PN"
-mi_imagen2=new Image
-mi_imagen2.src="img/bombo7Equipos.PNG"
-var i=1;
-function cambia_imagen() {                      
-   if (i == 1)
-      {
-      document.images['prueba'].src=mi_imagen2.src
-      i=2;
       }
-   else
-      {
-      document.images['prueba'].src=mi_imagen1.src;
-      i=1;
-      }
-   }
-</script>
+    }
+    </script>
+  -->  
 
   </head>
 
   <body>
+
+    <script type="text/javascript">
+      function clickButton(){      
+      if (document.getElementById('imagen').src == 'img/bomboEquipoAnfitrion.PNG'){
+        document.getElementById('imagen').src = 'img/bombo7Equipos.PNG';}
+      else{
+        document.getElementById('imagen').src = 'img/bomboEquipoAnfitrion.PNG';}
+      }
+    </script>
+    
+
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Raffle</div>
@@ -88,16 +108,17 @@ function cambia_imagen() {
 
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-        <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos</h2>
+        <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos Equipos</h2>
         <table >
         <tr>
-        <td> <img name="prueba" onMousedown="cambia_imagen()" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
-        <td> <img id="myImage" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
+        <td> <img id="imagen" height="230" width="230" src="img/bomboEquipoAnfitrion.PNG" /> </td>
+        <td> <img id="" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         <td> <img height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         </tr>
         <tr>
-          <td><button>Calcular</button></td>
+
+          <td><button id = "demo" type="button" onclick="clickButton()">Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
           <td><button>Calcular</button></td>
@@ -105,6 +126,7 @@ function cambia_imagen() {
         </table>
         <br>
         <br>
+        <h2 class="card-title text-shadow text-white text-uppercase mb-0">Bombos Posiciones</h2>
          <table>
         <tr>
         <td> <img height="230" width="230" src="img/posicion8.PNG" /> </td>
