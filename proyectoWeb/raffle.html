@@ -226,10 +226,33 @@
       }
       //funcion que escoge el equipo y la posicion de los terceros bombos
       var numeroImagenActual3 =1;
+      var tercerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+      var tercerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
       function moverImagenEquipos3(movimiento) { 
       if (numeroImagenActual3 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
       document.getElementById('imgCarrusel3').src = 'img/bombo7Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion7.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      }
+      function eliminarE3(){
+        for(var i=0, l=tercerBomboE.length; i<l; i++){
+          var eliminarE = randE;
+          if(tercerBomboE[i] == eliminarE){
+            tercerBomboE.splice(i,1);
+            tercerBomboE;
+          }
+        }
+      }
+      function eliminarP3(){
+        for(var i=0, l=tercerBomboP.length; i<l; i++){
+          var eliminarP = randP;
+          if(tercerBomboP[i] == eliminarP){
+            tercerBomboP.splice(i,1);
+            tercerBomboP;
+          }
+        }
       }
       if (numeroImagenActual3 == 2 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo6Equipos.png';
