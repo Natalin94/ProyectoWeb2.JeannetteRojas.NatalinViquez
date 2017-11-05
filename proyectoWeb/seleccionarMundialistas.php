@@ -41,17 +41,58 @@
         $query= "select * from teams where confederation='CONCACAF'";
         $results= pg_query( $conn,$query) ;
 
+        global $concacaf_array;
+        $concacaf_array = array();
+        while ($row = pg_fetch_row($results)) {
+                 
+            array_push($concacaf_array, $row[0]);
+                  
+        }
+
+
         $query2= "select * from teams where confederation='UEFA'";
         $results2= pg_query( $conn,$query2) ;
+        global $uefa_array;
+        $uefa_array = array();
+        while ($row = pg_fetch_row($results2)) {
+                 
+            array_push($uefa_array, $row[0]);
+                  
+        }
+
 
         $queryCAF= "select * from teams where confederation='CAF'";
         $resultsCAF= pg_query( $conn,$queryCAF) ;
+        global $caf_array;
+        $caf_array = array();
+        while ($row = pg_fetch_row($resultsCAF)) {
+                 
+            array_push($caf_array, $row[0]);
+                  
+        }
+
 
         $queryCONMEBOL= "select * from teams where confederation='CONMEBOL'";
         $resultsCONMEBOL= pg_query( $conn,$queryCONMEBOL) ;
+        global $conmebol_array;
+        $conmebol_array = array();
+        while ($row = pg_fetch_row($resultsCONMEBOL)) {
+                 
+            array_push($conmebol_array, $row[0]);
+                  
+        }
+
 
         $queryAFC= "select * from teams where confederation='AFC'";
         $resultsAFC= pg_query( $conn,$queryAFC) ;
+        global $afc_array;
+        $afc_array = array();
+        while ($row = pg_fetch_row($resultsAFC)) {
+                 
+            array_push($afc_array, $row[0]);
+        }           
+
+
             
         pg_close($conn);
     ?>
@@ -111,6 +152,89 @@
           obj.checked=false;
         }
       }  
+
+
+      function contar(confe, form){
+        debugger;
+        alert(confe);
+        var seleccionados_array = [];
+        var noSeleccionados_array = [];
+        seleccionadosUEFA_array= [];
+        seleccionadosCAF_array= [];
+        seleccionadosCONMEBOL_array = [];
+        seleccionadosAFC_array = [];
+        noSeleccionadosUEFA_array= [];
+        noSeleccionadosCAF_array= [];
+        noSeleccionadosCONMEBOL_array= [];
+        noSeleccionadosAFC_array= [];
+        var checkboxes = document.getElementById(form).checkbox;
+        var cont = 0; 
+
+
+        for (var x=0; x < checkboxes.length; x++) {
+         if (checkboxes[x].checked) {
+            if(confe == "CONCACAF"){
+                seleccionados_array.push(checkboxes[x].value);
+                var lista1 = JSON.stringify(seleccionados_array);
+                localStorage.setItem("listaEquiposSeleccionados", lista1);
+            }    
+            if(confe == "UEFA"){
+                seleccionadosUEFA_array.push(checkboxes[x].value);
+                var lista2 = JSON.stringify(seleccionadosUEFA_array);
+                localStorage.setItem("listaEquiposUEFA", lista2);
+            } 
+            if(confe == "CAF"){
+                seleccionadosCAF_array.push(checkboxes[x].value);
+                var lista3 = JSON.stringify(seleccionadosCAF_array);
+                localStorage.setItem("listaEquiposCAF", lista3);
+            } 
+            if(confe == "CONMEBOL"){
+                seleccionadosCONMEBOL_array.push(checkboxes[x].value);
+                var lista4 = JSON.stringify(seleccionadosCONMEBOL_array);
+                localStorage.setItem("listaEquiposCONMEBOL", lista4);
+            }       
+            if(confe == "AFC"){
+                seleccionadosAFC_array.push(checkboxes[x].value);
+                var lista5 = JSON.stringify(seleccionadosAFC_array);
+                localStorage.setItem("listaEquiposAFC", lista5);
+            } 
+          
+
+         }
+         else{
+            if(confe == "CONCACAF"){
+                noSeleccionados_array.push(checkboxes[x].value);
+                var lista6 = JSON.stringify(noSeleccionados_array);
+                localStorage.setItem("listaEquiposNoSeleccionados", lista6);
+            }    
+            if(confe == "UEFA"){
+                noSeleccionadosUEFA_array.push(checkboxes[x].value);
+                var lista7 = JSON.stringify(noSeleccionadosUEFA_array);
+                localStorage.setItem("listaEquiposNoUEFA", lista7);
+            } 
+            if(confe == "CAF"){
+                noSeleccionadosCAF_array.push(checkboxes[x].value);
+                var lista8 = JSON.stringify(noSeleccionadosCAF_array);
+                localStorage.setItem("listaEquiposNoCAF", lista8);
+            } 
+            if(confe == "CONMEBOL"){
+                noSeleccionadosCONMEBOL_array.push(checkboxes[x].value);
+                var lista9 = JSON.stringify(noSeleccionadosCONMEBOL_array);
+                localStorage.setItem("listaEquiposNoCONMEBOL", lista9);
+            }       
+            if(confe == "AFC"){
+                noSeleccionadosAFC_array.push(checkboxes[x].value);
+                var lista10 = JSON.stringify(noSeleccionadosAFC_array);
+                localStorage.setItem("listaEquiposNoAFC", lista10);
+            } 
+          
+         }
+
+        }
+
+          alert(seleccionados_array) ;  
+      }
+
     </script>
 
     <div class="container">
@@ -121,14 +245,23 @@
 
            <h2 color="white">CONCACAF</h2>
             <div id="CONCACAF", name="CONCACAF">
+              <form id="form1" method="post" action="">
             <?php
-            
-              while ($row = pg_fetch_row($results)) {
+
+            for ($variable=0; $variable<count($concacaf_array); $variable+=1) {
+                echo "<h3><input type='checkbox' name='checkbox' value= $concacaf_array[$variable] onclick='validacion(CONCACAF.checkbox1,checkbox'>";
+                  echo $concacaf_array[$variable];
+                echo "</h3><br>";
+           }
+
+              /*while ($row = pg_fetch_row($results)) {
                   echo "<h3><input type='checkbox' name='checkbox1' value='checkbox1' onclick='validacion(CONCACAF.checkbox1,checkbox'>";
                   echo $row[0];
                   echo "</h3><br>";
-              }
+              }*/
           ?>
+          <input type="button" name="Submit" value="Add" onClick="contar('CONCACAF', 'form1');">
+          </form>
           </div>
             
         </div>
@@ -137,58 +270,89 @@
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
           <h2 color="white">UEFA</h2>
+          <form id="form2" method="post" action="">
            <?php
             
-              while ($row = pg_fetch_row($results2)) {
+             for ($variable=0; $variable<count($uefa_array); $variable+=1) {
+                echo "<h3><input type='checkbox' name='checkbox' value= $uefa_array[$variable] onclick='validacion(UEFA.checkbox1,checkbox'>";
+                  echo $uefa_array[$variable];
+                echo "</h3><br>";
+            }
+             /* while ($row = pg_fetch_row($results2)) {
                   echo "<h3><input type='checkbox' name='transporte' value='1'>";
                   echo $row[0];
                   echo "</h3><br>";
-              }
+              }*/
           ?>
-          
+        <input type="button" name="Submit" value="Add" onClick="contar('UEFA', 'form2');">
+        </form>
         </div>
       </div>
 
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
          <h2 color="white">CAF</h2>
+          <form id="form3" method="post" action="">
             <?php
-            
-              while ($row = pg_fetch_row($resultsCAF)) {
+              for ($variable=0; $variable<count($caf_array); $variable+=1) {
+                echo "<h3><input type='checkbox' name='checkbox' value= $uefa_array[$variable] onclick='validacion(CAF.checkbox1,checkbox'>";
+                  echo $caf_array[$variable];
+                echo "</h3><br>";
+              }
+              /*while ($row = pg_fetch_row($resultsCAF)) {
                   echo "<h3><input type='checkbox' name='transporte' value='1'>";
                   echo $row[0];
                   echo "</h3><br>";
-              }
+              }*/
           ?>
+          <input type="button" name="Submit" value="Add" onClick="contar('CAF', 'form3');">
+          </form>
           </div>
         </div>
 
         <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
          <h2 color="white">CONMEBOL</h2>
+         <form id="form4" method="post" action="">
             <?php
             
-              while ($row = pg_fetch_row($resultsCONMEBOL)) {
+              for ($variable=0; $variable<count($conmebol_array); $variable+=1) {
+                echo "<h3><input type='checkbox' name='checkbox' value= $conmebol_array[$variable] onclick='validacion(CONMEBOL.checkbox1,checkbox'>";
+                  echo $conmebol_array[$variable];
+                echo "</h3><br>";
+              }
+              /*while ($row = pg_fetch_row($resultsCONMEBOL)) {
                   echo "<h3><input type='checkbox' name='transporte' value='1'>";
                   echo $row[0];
                   echo "</h3><br>";
-              }
+              }*/
           ?>
+          <input type="button" name="Submit" value="Add" onClick="contar('CONMEBOL', 'form4');">
+          </form>
           </div>
         </div>
 
          <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
          <h2 color="white">AFC</h2>
+         <form id="form5" method="post" action="">
             <?php
             
-              while ($row = pg_fetch_row($resultsAFC)) {
+               for ($variable=0; $variable<count($afc_array); $variable+=1) {
+                echo "<h3><input type='checkbox' name='checkbox' value= $uefa_array[$variable] onclick='validacion(CONMEBOL.checkbox1,checkbox'>";
+                  echo $afc_array[$variable];
+                echo "</h3><br>";
+              }
+             /* while ($row = pg_fetch_row($resultsAFC)) {
                   echo "<h3><input type='checkbox' name='transporte' value='1'>";
                   echo $row[0];
                   echo "</h3><br>";
-              }
+              }*/
   
           ?>
+
+           <input type="button" name="Submit" value="Add" onClick="contar('AFC', 'form5');">
+          </form>
           </div>
         </div>
 
@@ -199,7 +363,7 @@
       <div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
           <li class="page-item">
-            <a class="page-link" href="raffle.html">Next &rarr; </a>
+            <a class="page-link" href="repechage.php">Next &rarr; </a>
           </li>
 
         </ul>

@@ -37,8 +37,6 @@
 <body>
 
     <?php
-
-
         $user="postgres";
         $password= "namavilo";
         $dbname="Fifa_world_cup";
