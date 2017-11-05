@@ -38,7 +38,7 @@
                 
         $conn = pg_connect($strconn) or die('{"estado":0}');
 
-        $query= "select * from teams where confederation='CONCACAF'";
+        $query= "select * from teams where confederation='CONCACAF' and state = true";
         $results= pg_query( $conn,$query) ;
 
         global $concacaf_array;
@@ -50,7 +50,7 @@
         }
 
 
-        $query2= "select * from teams where confederation='UEFA'";
+        $query2= "select * from teams where confederation='UEFA' and state = true";
         $results2= pg_query( $conn,$query2) ;
         global $uefa_array;
         $uefa_array = array();
@@ -61,7 +61,7 @@
         }
 
 
-        $queryCAF= "select * from teams where confederation='CAF'";
+        $queryCAF= "select * from teams where confederation='CAF' and state = true";
         $resultsCAF= pg_query( $conn,$queryCAF) ;
         global $caf_array;
         $caf_array = array();
@@ -72,7 +72,7 @@
         }
 
 
-        $queryCONMEBOL= "select * from teams where confederation='CONMEBOL'";
+        $queryCONMEBOL= "select * from teams where confederation='CONMEBOL' and state = true";
         $resultsCONMEBOL= pg_query( $conn,$queryCONMEBOL) ;
         global $conmebol_array;
         $conmebol_array = array();
@@ -83,7 +83,7 @@
         }
 
 
-        $queryAFC= "select * from teams where confederation='AFC'";
+        $queryAFC= "select * from teams where confederation='AFC' and state = true";
         $resultsAFC= pg_query( $conn,$queryAFC) ;
         global $afc_array;
         $afc_array = array();
@@ -232,7 +232,7 @@
 
         }
 
-          alert(seleccionados_array) ;  
+            
       }
 
     </script>
@@ -295,7 +295,7 @@
           <form id="form3" method="post" action="">
             <?php
               for ($variable=0; $variable<count($caf_array); $variable+=1) {
-                echo "<h3><input type='checkbox' name='checkbox' value= $uefa_array[$variable] onclick='validacion(CAF.checkbox1,checkbox'>";
+                echo "<h3><input type='checkbox' name='checkbox' value= $caf_array[$variable] onclick='validacion(CAF.checkbox1,checkbox'>";
                   echo $caf_array[$variable];
                 echo "</h3><br>";
               }
@@ -339,7 +339,7 @@
             <?php
             
                for ($variable=0; $variable<count($afc_array); $variable+=1) {
-                echo "<h3><input type='checkbox' name='checkbox' value= $uefa_array[$variable] onclick='validacion(CONMEBOL.checkbox1,checkbox'>";
+                echo "<h3><input type='checkbox' name='checkbox' value= $afc_array[$variable] onclick='validacion(CONMEBOL.checkbox1,checkbox'>";
                   echo $afc_array[$variable];
                 echo "</h3><br>";
               }

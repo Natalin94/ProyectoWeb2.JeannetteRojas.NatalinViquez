@@ -39,7 +39,8 @@
               
       $conn = pg_connect($strconn) or die('{"estado":0}');
 
-      $query= "select * from teams";
+      $query= "select * from teams order by points DESC";
+
       $results= pg_query( $conn,$query) ;
 
           

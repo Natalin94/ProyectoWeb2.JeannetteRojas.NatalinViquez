@@ -49,14 +49,11 @@
     var listaGuardada5 = localStorage.getItem('listaEquiposAFC');
     listaGuardada5 = JSON.parse(listaGuardada5);
 
-    var mundialistas = listaFinal.concat(listaSeleccionados);
-    mundialistas2= mundialistas.concat(listaGuardada2);
-    mundialistas3= mundialistas2.concat(listaGuardada3);
-    mundialistas4= mundialistas3.concat(listaGuardada4);
-    mundialistas5= mundialistas4.concat(listaGuardada5);
-    alert(mundialistas5);
+    var mundialistas = listaFinal.concat(listaSeleccionados,listaGuardada2,listaGuardada3,listaGuardada4,listaGuardada5);
+    
+    alert(mundialistas);
 
-    var listaMundialistas = JSON.stringify(mundialistas5);
+    var listaMundialistas = JSON.stringify(mundialistas);
     localStorage.setItem("listaMundialistas", listaMundialistas);
 
   }
