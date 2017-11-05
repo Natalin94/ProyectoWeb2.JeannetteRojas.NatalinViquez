@@ -32,9 +32,39 @@
     txt.value = valor;
   }
 
+  function funcionListaFinal() {
 
+    var listaSeleccionados = localStorage.getItem('listaEquiposSeleccionados');
+    listaSeleccionados = JSON.parse(listaSeleccionados);
+
+    var listaGuardada2 = localStorage.getItem('listaEquiposCONMEBOL');
+    listaGuardada2 = JSON.parse(listaGuardada2);
+
+    var listaGuardada3 = localStorage.getItem('listaEquiposCAF');
+    listaGuardada3 = JSON.parse(listaGuardada3);
+
+    var listaGuardada4 = localStorage.getItem('listaEquiposUEFA');
+    listaGuardada4 = JSON.parse(listaGuardada4);
+
+    var listaGuardada5 = localStorage.getItem('listaEquiposAFC');
+    listaGuardada5 = JSON.parse(listaGuardada5);
+
+    var mundialistas = listaFinal.concat(listaSeleccionados);
+    mundialistas2= mundialistas.concat(listaGuardada2);
+    mundialistas3= mundialistas2.concat(listaGuardada3);
+    mundialistas4= mundialistas3.concat(listaGuardada4);
+    mundialistas5= mundialistas4.concat(listaGuardada5);
+    alert(mundialistas5);
+
+    var listaMundialistas = JSON.stringify(mundialistas5);
+    localStorage.setItem("listaMundialistas", listaMundialistas);
+
+  }
+
+  var contador = 0;
+  var listaFinal = new Array();
   function resultadoJuego(campo1, campo2, campo3, campo4, resultado, texto1, texto2, id) {
-    debugger;
+    contador+=1;
     var juego1 = Math.floor((Math.random() * 7) + 1);
     var juego2 = Math.floor((Math.random() * 7) + 1);
     var juego3 = Math.floor((Math.random() * 7) + 1);
@@ -60,13 +90,19 @@
 
     if (juego1+ juego4 >= juego2 + juego3){
       document.getElementById(resultado.id).innerHTML = "The winner is: "+ ganador2.value;
+      listaFinal.push(ganador2.value);
     } 
 
     else{
      document.getElementById(resultado.id).innerHTML = "The winner is: "+ ganador.value;
+     listaFinal.push(ganador.value);
    } 
 
-   document.getElementById(id).disabled = true;
+    document.getElementById(id).disabled = true;
+
+    if(contador== 6){
+      funcionListaFinal();
+    }
 
  }
  </script>
@@ -87,21 +123,12 @@
  $conn = pg_connect($strconn) or die('{"estado":0}');
 
  $query= "select * from teams where confederation !='UEFA'";
- $query2= "select * from teams where confederation='UEFA'";
+ $query2= "select * from teams where confederation='OFC'";
 
 
- $results= pg_query( $conn,$query) ;
- $results2= pg_query( $conn,$query) ;
- $results3= pg_query( $conn,$query) ;
- $results4= pg_query( $conn,$query) ;
+ 
  $results5= pg_query( $conn,$query2) ;
- $results6= pg_query( $conn,$query2) ;
- $results7= pg_query( $conn,$query2) ;
- $results8= pg_query( $conn,$query2) ;
- $results9= pg_query( $conn,$query2) ;
- $results10= pg_query( $conn,$query2) ;
- $results11= pg_query( $conn,$query2) ;
- $results12= pg_query( $conn,$query2) ;
+ 
 
  pg_close($conn);
  ?>
@@ -167,12 +194,12 @@
               <tr>
 
                 <td> <?php
-                echo "<select name='country' onchange='cargar_al_input(this.value, texto2)'>";
-                while ($row = pg_fetch_row($results)) {
-                  echo "<option>";
-                  echo $row[0];
-                  echo "</option>";
-                }
+                echo "<select name='country' id='country' onchange='cargar_al_input(this.value, texto2)'>";
+                  while ($row = pg_fetch_row($results5)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }
 
                 echo "</select>";
                 echo "<input id='campo1' type='text' disabled='disabled' size='2'/>";
@@ -181,12 +208,24 @@
                 <td> <?php
                 echo "<input id='campo2' type='text' disabled='disabled' size='2'/>";
                 echo "<select id='country2' onchange='cargar_al_input(this.value, texto1)'>";
+              /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
 
-                while ($row = pg_fetch_row($results2)) {
-                  echo "<option>";
-                  echo $row[0];
-                  echo "</option>";
-                }
+            echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoAFC');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country2');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
                 echo "</select>";
                 ?></td>
               </tr>
@@ -218,12 +257,25 @@
             <tr>
 
               <td> <?php
-              echo "<select name='country3' onchange='cargar_al_input(this.value, texto4)'>";
-              while ($row = pg_fetch_row($results3)) {
-                echo "<option>";
-                echo $row[0];
-                echo "</option>";
+              echo "<select id='country3' onchange='cargar_al_input(this.value, texto4)'>";
+              /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+            echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoSeleccionados');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country3');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
               }
+              
+              </script>";
 
               echo "</select>";
               echo "<input id='campo5' type='text' disabled='disabled' size='2'/>";
@@ -233,11 +285,24 @@
               echo "<input id='campo6' type='text' disabled='disabled' size='2'/>";
               echo "<select id='country4' onchange='cargar_al_input(this.value, texto3)'>";
 
-              while ($row = pg_fetch_row($results4)) {
-                echo "<option>";
-                echo $row[0];
-                echo "</option>";
+               /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+            echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoCONMEBOL');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country4');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
               }
+              
+              </script>";
               echo "</select>";
               ?></td>
             </tr>
@@ -287,12 +352,25 @@
             <tr>
 
               <td> <?php
-              echo "<select name='country5' onchange='cargar_al_input(this.value, texto6)'>";
-              while ($row = pg_fetch_row($results5)) {
-                echo "<option>";
-                echo $row[0];
-                echo "</option>";
+              echo "<select id='country5' onchange='cargar_al_input(this.value, texto6)'>";
+               /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country5');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
               }
+              
+              </script>";
 
               echo "</select>";
               echo "<input id='campo9' type='text' disabled='disabled' size='2'/>";
@@ -302,11 +380,24 @@
               echo "<input id='campo10' type='text' disabled='disabled' size='2'/>";
               echo "<select id='country6' onchange='cargar_al_input(this.value, texto5)'>";
 
-              while ($row = pg_fetch_row($results6)) {
-                echo "<option>";
-                echo $row[0];
-                echo "</option>";
+               /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country6');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
               }
+              
+              </script>";
               echo "</select>";
               ?></td>
             </tr>
@@ -339,12 +430,25 @@
           <tr>
 
             <td> <?php
-            echo "<select name='country7' onchange='cargar_al_input(this.value, texto8)'>";
-            while ($row = pg_fetch_row($results7)) {
-              echo "<option>";
-              echo $row[0];
-              echo "</option>";
-            }
+            echo "<select id='country7' onchange='cargar_al_input(this.value, texto8)'>";
+            /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country7');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
 
             echo "</select>";
             echo "<input id='campo13' type='text' disabled='disabled' size='2'/>";
@@ -354,11 +458,24 @@
             echo "<input id='campo14' type='text' disabled='disabled' size='2'/>";
             echo "<select id='country8' onchange='cargar_al_input(this.value, texto7)'>";
 
-            while ($row = pg_fetch_row($results8)) {
-              echo "<option>";
-              echo $row[0];
-              echo "</option>";
-            }
+            /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country8');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
             echo "</select>";
             ?></td>
           </tr>
@@ -392,13 +509,25 @@
         <tr>
 
           <td> <?php
-          echo "<select name='country9' onchange='cargar_al_input(this.value, texto10)'>";
-          while ($row = pg_fetch_row($results9)) {
-            echo "<option>";
-            echo $row[0];
-            echo "</option>";
-          }
+          echo "<select id='country9' onchange='cargar_al_input(this.value, texto10)'>";
+          /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
 
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country9');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
           echo "</select>";
           echo "<input id='campo17' type='text' disabled='disabled' size='2'/>";
           ?></td>
@@ -406,12 +535,25 @@
           <td> <?php
           echo "<input id='campo18' type='text' disabled='disabled' size='2'/>";
           echo "<select id='country10' onchange='cargar_al_input(this.value, texto9)'>";
+           /*while ($row = pg_fetch_row($results11)) {
+                    echo "<option>";
+                    echo $row[0];
+                    echo "</option>";
+                  }*/
 
-          while ($row = pg_fetch_row($results10)) {
-            echo "<option>";
-            echo $row[0];
-            echo "</option>";
-          }
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country10');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
+
           echo "</select>";
           ?></td>
         </tr>
@@ -444,12 +586,25 @@
       <tr>
 
         <td> <?php
-        echo "<select name='country11' onchange='cargar_al_input(this.value, texto12)'>";
-        while ($row = pg_fetch_row($results12)) {
+        echo "<select id='country11' onchange='cargar_al_input(this.value, texto12)'>";
+         /*while ($row = pg_fetch_row($results11)) {
           echo "<option>";
           echo $row[0];
           echo "</option>";
-        }
+        }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+             
+              var x = document.getElementById('country11');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
 
         echo "</select>";
         echo "<input id='campo21' type='text' disabled='disabled' size='2'/>";
@@ -459,11 +614,24 @@
         echo "<input id='campo22' type='text' disabled='disabled' size='2'/>";
         echo "<select id='country12' onchange='cargar_al_input(this.value, texto11)'>";
 
-        while ($row = pg_fetch_row($results11)) {
+        /*while ($row = pg_fetch_row($results11)) {
           echo "<option>";
           echo $row[0];
           echo "</option>";
-        }
+        }*/
+
+        echo "<script language='javascript'>
+              var listaGuardada = localStorage.getItem('listaEquiposNoUEFA');
+              listaGuardada = JSON.parse(listaGuardada);
+              
+              var x = document.getElementById('country12');
+              for (i = 0; i < listaGuardada.length; i++) { 
+                  var option = document.createElement('option');
+                  option.text = listaGuardada[i];
+                  x.add(option);
+              }
+              
+              </script>";
         echo "</select>";
         ?></td>
       </tr>
