@@ -40,28 +40,18 @@
       //recorrido para eliminar el equipo encontrado
       function eliminarE(){
         for(var i=0, l=primerBomboE.length; i<l; i++){
-          debugger;
           var eliminarE = randE;
           if(primerBomboE[i] == eliminarE){
-            debugger;
             primerBomboE.splice(i,1);
-            debugger;
-            alert("eliminado lista " + eliminarE);
-            debugger;
             primerBomboE;
           }
         }
       }
       function eliminarP(){
         for(var i=0, l=primerBomboP.length; i<l; i++){
-          debugger;
           var eliminarP = randP;
           if(primerBomboP[i] == eliminarP){
-            debugger;
             primerBomboP.splice(i,1);
-            debugger;
-            alert("eliminado lista " + eliminarP);
-            debugger;
             primerBomboP;
           }
         }
@@ -137,39 +127,98 @@
       }
       //funcion que escoge el equipo y la posicion de los segundos bombos
       var numeroImagenActual2 =1;
+      var segundoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+      var segundoBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
       function moverImagenEquipos2(movimiento) { 
       if (numeroImagenActual2 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
       document.getElementById('imgCarrusel2').src = 'img/bombo7Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion7.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      }
+      //recorrido para eliminar el equipo encontrado
+      function eliminarE2(){
+        for(var i=0, l=segundoBomboE.length; i<l; i++){
+          var eliminarE = randE;
+          if(segundoBomboE[i] == eliminarE){
+            segundoBomboE.splice(i,1);
+            segundoBomboE;
+          }
+        }
+      }
+      function eliminarP2(){
+        for(var i=0, l=segundoBomboP.length; i<l; i++){
+          var eliminarP = randP;
+          if(segundoBomboP[i] == eliminarP){
+            segundoBomboP.splice(i,1);
+            segundoBomboP;
+          }
+        }
       }
       if (numeroImagenActual2 == 2 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo6Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion6.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 3 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo5Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion5.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 4 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo4Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion4.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 5 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo3Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion3.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 6 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo2Equipos.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion2.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 7 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bombo1Equipo.png';
       document.getElementById('imgCarruselP2').src = 'img/posicion1.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 8 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel2').src = 'img/bomboVacio.png';
       document.getElementById('imgCarruselP2').src = 'img/bomboVacio.png';
+      var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
+      var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
       }
+      eliminarE2();
+      eliminarP2();
       if (numeroImagenActual2 == 9 && movimiento == 'adelante') {
       alert ('No es posible hacer ese movimiento');
       }
