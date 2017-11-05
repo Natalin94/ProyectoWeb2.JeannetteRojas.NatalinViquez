@@ -142,3 +142,36 @@ function agregarUsuario()
   
   document.getElementById("form1").reset();
 }
+
+function agregarSorteo()
+{         
+  var id = document.getElementById("idtxt").value;
+
+//IMPLEMENTACION DEL PHP
+  var peticion = obtenerXHR();
+   
+  url="../proyectoWeb/php/agregarSorteo.php?tipo=insertar";
+  url+="&id="+id;
+  debugger;
+  peticion.open("GET", url , true); 
+  peticion.onreadystatechange=function ()
+    {
+      debugger;
+      if (peticion.readyState==4)
+      {
+        if (peticion.status==200)
+        {
+
+          if (peticion.responseText===1)
+          {
+            alert ("si se pudo insertar");
+          }
+        }
+      }
+    };
+    
+  peticion.send(null);
+  
+  
+  document.getElementById("form1").reset();
+}
