@@ -17,9 +17,10 @@ $tipo= $_REQUEST["tipo"];
 
 if($tipo=="insertar")
 {
-	$country= $_REQUEST["country"];
+	$listaGrupoA = array("CR", "Russia", "Alemania","Holanda","Panama","Argentina","USA","Mexico");
+	echo "I like " . $listaGrupoA[0] . ", " . $listaGrupoA[1] . " and " . $listaGrupoA[2] . "," . $listaGrupoA[3]. ", " . $listaGrupoA[4]. ", " .$listaGrupoA[5]. " , " .$listaGrupoA[6]. ", " . $listaGrupoA[7. "."];
 
-	$query= "insert into grupoA values ('$country')";
+	$query= "insert into grupoA values ('.$listaGrupoA[0].,.$listaGrupoA[1].,.$listaGrupoA[2].,.$listaGrupoA[3].,.$listaGrupoA[3].,.$listaGrupoA[4].,.$listaGrupoA[5].,.$listaGrupoA[6].,.$listaGrupoA[7].')";
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
 
