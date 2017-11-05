@@ -35,7 +35,14 @@
       document.getElementById('imgCarruselP1').src = 'img/posicion7.png';
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
+      randE = "Russia";
+      randP = "1A";
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById("1A").appendChild(btn);
       }
       //recorrido para eliminar el equipo encontrado
       function eliminarE(){
@@ -62,6 +69,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       //recorrido para eliminar valor encontrado
       eliminarE();
@@ -72,6 +84,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -81,6 +98,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -90,6 +112,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -99,6 +126,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -108,6 +140,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -117,6 +154,11 @@
       var randE = primerBomboE[Math.floor(Math.random() * primerBomboE.length)];
       var randP = primerBomboP[Math.floor(Math.random() * primerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE();
       eliminarP();
@@ -128,7 +170,7 @@
       //funcion que escoge el equipo y la posicion de los segundos bombos
       var numeroImagenActual2 =1;
       var segundoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
-      var segundoBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
+      var segundoBomboP = ["2A","2B","2C","2D","2E","2F","2G","2H"];
       function moverImagenEquipos2(movimiento) { 
       if (numeroImagenActual2 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
       document.getElementById('imgCarrusel2').src = 'img/bombo7Equipos.png';
@@ -136,6 +178,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       //recorrido para eliminar el equipo encontrado
       function eliminarE2(){
@@ -162,6 +209,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -171,6 +223,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -180,6 +237,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -189,6 +251,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -198,6 +265,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -207,6 +279,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -216,6 +293,11 @@
       var randE = segundoBomboE[Math.floor(Math.random() * segundoBomboE.length)];
       var randP = segundoBomboP[Math.floor(Math.random() * segundoBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       eliminarE2();
       eliminarP2();
@@ -227,7 +309,7 @@
       //funcion que escoge el equipo y la posicion de los terceros bombos
       var numeroImagenActual3 =1;
       var tercerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
-      var tercerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
+      var tercerBomboP = ["3A","3B","3C","3D","3E","3F","3G","3H"];
       function moverImagenEquipos3(movimiento) { 
       if (numeroImagenActual3 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
       document.getElementById('imgCarrusel3').src = 'img/bombo7Equipos.png';
@@ -235,6 +317,11 @@
       var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
       var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
       alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
       function eliminarE3(){
         for(var i=0, l=tercerBomboE.length; i<l; i++){
@@ -257,31 +344,101 @@
       if (numeroImagenActual3 == 2 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo6Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion6.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 3 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo5Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion5.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 4 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo4Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion4.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 5 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo3Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion3.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 6 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo2Equipos.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion2.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 7 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bombo1Equipo.png';
       document.getElementById('imgCarruselP3').src = 'img/posicion1.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 8 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel3').src = 'img/bomboVacio.png';
       document.getElementById('imgCarruselP3').src = 'img/bomboVacio.png';
+      var randE = tercerBomboE[Math.floor(Math.random() * tercerBomboE.length)];
+      var randP = tercerBomboP[Math.floor(Math.random() * tercerBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE3();
+      eliminarP3();
       if (numeroImagenActual3 == 9 && movimiento == 'adelante') {
       alert ('No es posible hacer ese movimiento');
       }
@@ -289,39 +446,137 @@
       }
       //funcion que escoge el equipo y la posicion de los cuartos bombos
       var numeroImagenActual4 =1;
+      var cuartoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+      var cuartoBomboP = ["4A","4B","4C","4D","4E","4F","4G","4H"];
       function moverImagenEquipos4(movimiento) { 
       if (numeroImagenActual4 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
       document.getElementById('imgCarrusel4').src = 'img/bombo7Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion7.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
+      }
+      function eliminarE4(){
+        for(var i=0, l=cuartoBomboE.length; i<l; i++){
+          var eliminarE = randE;
+          if(cuartoBomboE[i] == eliminarE){
+            cuartoBomboE.splice(i,1);
+            cuartoBomboE;
+          }
+        }
+      }
+      function eliminarP4(){
+        for(var i=0, l=cuartoBomboP.length; i<l; i++){
+          var eliminarP = randP;
+          if(cuartoBomboP[i] == eliminarP){
+            cuartoBomboP.splice(i,1);
+            cuartoBomboP;
+          }
+        }
       }
       if (numeroImagenActual4 == 2 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo6Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion6.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 3 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo5Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion5.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 4 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo4Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion4.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 5 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo3Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion3.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 6 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo2Equipos.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion2.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 7 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bombo1Equipo.png';
       document.getElementById('imgCarruselP4').src = 'img/posicion1.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 8 && movimiento == 'adelante') {
       document.getElementById('imgCarrusel4').src = 'img/bomboVacio.png';
       document.getElementById('imgCarruselP4').src = 'img/bomboVacio.png';
+      var randE = cuartoBomboE[Math.floor(Math.random() * cuartoBomboE.length)];
+      var randP = cuartoBomboP[Math.floor(Math.random() * cuartoBomboP.length)];
+      alert("El pais " + randE + " estará en la posicion " + randP);
+      //agregando datos a los grupos
+      var fila="<tr><td>"+randE+"</td><td>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById(randP).appendChild(btn);
       }
+      eliminarE4();
+      eliminarP4();
       if (numeroImagenActual4 == 9 && movimiento == 'adelante') {
       alert ('No es posible hacer ese movimiento');
       }
@@ -383,7 +638,7 @@
         <td> <img id="imgCarrusel4" height="230" width="230" src="img/bombo8Equipos.PNG"/> </td>
         </tr>
         <tr>
-          <td><button id = "adelante" onclick="moverImagenEquipos1('adelante')" type="button">Seleccionar equipo y posicion</button></td>
+          <td><button id="adelante" onclick="moverImagenEquipos1('adelante')" type="button">Seleccionar equipo y posicion</button></td>
           <td><button id="adelante" onclick="moverImagenEquipos2('adelante')" type="button">Seleccionar equipo y posicion</button></td>
           <td><button id="adelante" onclick="moverImagenEquipos3('adelante')" type="button">Seleccionar equipo y posicion</button></td>
           <td><button id="adelante" onclick="moverImagenEquipos4('adelante')" type="button">Seleccionar equipo y posicion</button></td>
@@ -408,47 +663,95 @@
         <div class="card card-inverse">
           <h2 class="card-title text-shadow text-white text-uppercase mb-0">Grupos</h2>
           <table >
-            <tr>
+            <tr> <!--para que esté todo en una sola fila -->
               <td>
-                <table width="100" align="center"border="1">
-                  <tr>
-                    <td> 1 </td>    
-                    <td> pais </td>                                     
-                  </tr>
-                  <tr>
-                    <td> 2 </td>    
-                    <td> pais </td>                                        
-                  </tr>
-                  <tr>
-                    <td> 3 </td>    
-                    <td> pais </td>                                        
-                  </tr>
-                  <tr>
-                    <td> 4 </td>    
-                    <td> pais </td>                                         
+                <table width="100" align="center"border="1"><!--GrupoA-->
+                  <thead>Grupo A</thead>
+                  <tr>                    
+                    <tbody id="1A"></tbody>
+                    <tbody id="2A"></tbody>
+                    <tbody id="3A"></tbody>
+                    <tbody id="4A"></tbody>
                   </tr>
                 </table>
               </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoB-->
+                  <thead>Grupo B</thead>
+                  <tr>
+                    <tbody id="1B"></tbody>  
+                    <tbody id="2B"></tbody>  
+                    <tbody id="3B"></tbody>  
+                    <tbody id="4B"></tbody>                                     
+                  </tr>
+                </table>                
+              </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoC-->
+                  <thead>Grupo C</thead>
+                  <tr>
+                    <tbody id="1C"></tbody>  
+                    <tbody id="2C"></tbody>  
+                    <tbody id="3C"></tbody>  
+                    <tbody id="4C"></tbody>                                     
+                  </tr>
+                </table>                
+              </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoD-->
+                  <thead>Grupo D</thead>
+                  <tr>
+                    <tbody id="1D"></tbody>  
+                    <tbody id="2D"></tbody>  
+                    <tbody id="3D"></tbody>  
+                    <tbody id="4D"></tbody>                                     
+                  </tr>
+                </table>                
+              </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoE-->
+                  <thead>Grupo E</thead>
+                  <tr>
+                    <tbody id="1E"></tbody>  
+                    <tbody id="2E"></tbody>  
+                    <tbody id="3E"></tbody>  
+                    <tbody id="4E"></tbody>                                     
+                  </tr>
+                </table>                
+              </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoF-->
+                  <thead>Grupo F</thead>
+                  <tr>
+                    <tbody id="1F"></tbody>  
+                    <tbody id="2F"></tbody>  
+                    <tbody id="3F"></tbody>  
+                    <tbody id="4F"></tbody>                                     
+                  </tr>
+                </table>                
+              </td>
               <br>
               <td>
-                <table width="100" align="center"border="1">
+                <table width="100" align="center"border="1"><!--GrupoG-->
+                  <thead>Grupo G</thead>
                   <tr>
-                    <td> 1 </td>    
-                    <td> pais </td>                                     
+                    <tbody id="1G"></tbody>  
+                    <tbody id="2G"></tbody>  
+                    <tbody id="3G"></tbody>  
+                    <tbody id="4G"></tbody>                                     
                   </tr>
+                </table>                
+              </td>
+              <td>
+                <table width="100" align="center"border="1"><!--GrupoH-->
+                  <thead>Grupo H</thead>
                   <tr>
-                    <td> 2 </td>    
-                    <td> pais </td>                                        
+                    <tbody id="1H"></tbody>  
+                    <tbody id="2H"></tbody>  
+                    <tbody id="3H"></tbody>  
+                    <tbody id="4H"></tbody>                                     
                   </tr>
-                  <tr>
-                    <td> 3 </td>    
-                    <td> pais </td>                                        
-                  </tr>
-                  <tr>
-                    <td> 4 </td>    
-                    <td> pais </td>                                         
-                  </tr>
-                </table>
+                </table>                
               </td>
             </tr>
           </table>
