@@ -243,7 +243,7 @@
         <div class="card card-inverse">
 
 
-           <h2 color="white">CONCACAF</h2>
+           <h2 color="white">CONCACAF (Seleccionar 3 paises)</h2>
             <div id="CONCACAF", name="CONCACAF">
               <form id="form1" method="post" action="">
             <?php
@@ -269,7 +269,7 @@
 
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-          <h2 color="white">UEFA</h2>
+          <h2 color="white">UEFA (Seleccionar 9 paises)</h2>
           <form id="form2" method="post" action="">
            <?php
             
@@ -291,7 +291,7 @@
 
       <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-         <h2 color="white">CAF</h2>
+         <h2 color="white">CAF (Seleccionar 5 paises)</h2>
           <form id="form3" method="post" action="">
             <?php
               for ($variable=0; $variable<count($caf_array); $variable+=1) {
@@ -312,7 +312,7 @@
 
         <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-         <h2 color="white">CONMEBOL</h2>
+         <h2 color="white">CONMEBOL (Seleccionar 4 paises)</h2>
          <form id="form4" method="post" action="">
             <?php
             
@@ -334,7 +334,7 @@
 
          <div class="bg-faded p-4 my-4">
         <div class="card card-inverse">
-         <h2 color="white">AFC</h2>
+         <h2 color="white">AFC (Seleccionar 4 paises)</h2>
          <form id="form5" method="post" action="">
             <?php
             
