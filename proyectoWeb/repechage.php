@@ -157,7 +157,7 @@
           <a class="nav-link text-uppercase text-expanded" href="repechage.html">Repechage</a>
         </li>
         <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="raffle.html">Raffle</a>
+          <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.php">Raffle</a>
         </li>
         <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
@@ -662,7 +662,7 @@
 <div class="bg-faded p-4 my-4">
   <ul class="pagination justify-content-center mb-0">
     <li class="page-item">
-      <a class="page-link" href="raffle.html">Next &rarr; </a>
+      <a class="page-link" href="raffle.php">Next &rarr; </a>
     </li>
 
   </ul>

@@ -48,7 +48,7 @@
     ?>
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
-    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Ranking</div>
+    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Repechage</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
@@ -60,26 +60,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Home</a>
+              <a class="nav-link text-uppercase text-expanded" href="indexPrincipal.html">Home</a>
             </li> 
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="agregarEquipos.html">Add Team
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="ranking.php">Ranking FIFA</a>
-            </li>
-            
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.php">Raffle</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="indexPrincipal.html">Logout</a>
-            </li>
+           
           </ul>
         </div>
       </div>

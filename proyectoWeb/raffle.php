@@ -1524,11 +1524,9 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="ranking.php">Ranking FIFA</a>
             </li>
+            
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="repechage.html">Repechage</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="raffle.html">Raffle</a>
+              <a class="nav-link text-uppercase text-expanded" href="raffle.php">Raffle</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
