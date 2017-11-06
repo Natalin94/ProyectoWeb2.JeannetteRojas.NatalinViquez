@@ -24,6 +24,37 @@
 
   <body>
 
+     <?php
+
+
+    $user="postgres";
+    $password= "namavilo";
+    $dbname="Fifa_world_cup";
+    $port= "5432";
+    $host= "localhost";
+
+
+    $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+            
+    $conn = pg_connect($strconn) or die('{"estado":0}');
+
+    $query= "select * from sorteo";
+    $results= pg_query( $conn,$query) ;
+
+     while ($row = pg_fetch_row($results)) {
+                 
+          $query2= "select * from resultadoSorteo where idSorteo='".$row[0]."';";
+          $results2= pg_query( $conn,$query2) ;
+          while ($row2 = pg_fetch_row($results)) {
+            echo $row2[0];
+          }
+      }
+
+        
+    pg_close($conn);
+    ?>
+
+
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Result list</div>
 
@@ -48,7 +79,7 @@
               <a class="nav-link text-uppercase text-expanded" href="ranking.php">Ranking FIFA</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.html">Raffle</a>
+              <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.php">Raffle</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
