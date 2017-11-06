@@ -20,6 +20,13 @@ if($tipo=="insertar")
 	$grupoA=parseJSON($_GET['valorencapsulado']);
 	echo $grupoA;
 
+	foreach ($equipo as $grupoA) {
+		echo "$equipo";
+		# code...
+		$query = "insert into grupoA values ('$equipo')";
+	}
+
+
 	//$listaGrupoA = array("CR", "Russia", "Alemania","Holanda","Panama","Argentina","USA","Mexico");
 	//echo "I like " . $listaGrupoA[0] . ", " . $listaGrupoA[1] . " and " . $listaGrupoA[2] . "," . $listaGrupoA[3]. ".";
 
