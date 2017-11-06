@@ -1700,7 +1700,6 @@
         <button href='raffle.html' onclick="agregarSorteo()" text-align="right" >Guardar sorteo</button>
       </div>
 
-<<<<<<< HEAD
       <!-- Pagination -->
       <div class="bg-faded p-4 my-4">
         <ul class="pagination justify-content-center mb-0">
@@ -1710,8 +1709,7 @@
         </ul>
       </div>
 
-=======
->>>>>>> origin/master
+
     </div>
     <!-- /.container -->
 
