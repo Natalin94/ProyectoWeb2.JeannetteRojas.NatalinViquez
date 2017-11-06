@@ -114,7 +114,7 @@
       }
        //Luego lo paso por JSON  a un archivo php llamado js.php
 
-    jObject= JSON.stringify(jObject);
+    /*jObject= JSON.stringify(jObject);
     $.ajax({
             type:'post',
              cache:false,
@@ -124,7 +124,7 @@
             alert(server);//cuando reciba la respuesta lo imprimo
 
                }
-     });
+     });*/
      
 
 
