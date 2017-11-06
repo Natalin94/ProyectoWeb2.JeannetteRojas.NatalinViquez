@@ -17,10 +17,13 @@ $tipo= $_REQUEST["tipo"];
 
 if($tipo=="insertar")
 {
-	$listaGrupoA = array("CR", "Russia", "Alemania","Holanda","Panama","Argentina","USA","Mexico");
-	echo "I like " . $listaGrupoA[0] . ", " . $listaGrupoA[1] . " and " . $listaGrupoA[2] . "," . $listaGrupoA[3]. ".";
+	$grupoA=parseJSON($_GET['valorencapsulado']);
+	echo $grupoA;
 
-	$query= "insert into grupoA values ('.$listaGrupoA[0].,.$listaGrupoA[1].,.$listaGrupoA[2].,.$listaGrupoA[3].')";
+	//$listaGrupoA = array("CR", "Russia", "Alemania","Holanda","Panama","Argentina","USA","Mexico");
+	//echo "I like " . $listaGrupoA[0] . ", " . $listaGrupoA[1] . " and " . $listaGrupoA[2] . "," . $listaGrupoA[3]. ".";
+
+	$query= "insert into grupoA values ('.$grupoA[0].,.$grupoA[1].,.$grupoA[2].,.$grupoA[3].')";
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
 

@@ -100,8 +100,11 @@
       var grupoF = [];
       var grupoG = [];
       var grupoH = [];
+
+      var gA = grupoA.toJSONString();
+
+
       var numeroImagenActual1 =1;
-     
       var primerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
       function moverImagenEquipos1(movimiento) { 
       if (numeroImagenActual1 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
