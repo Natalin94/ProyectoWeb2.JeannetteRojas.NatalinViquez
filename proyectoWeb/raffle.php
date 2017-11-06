@@ -101,7 +101,31 @@
       var grupoG = [];
       var grupoH = [];
 
-      var gA = grupoA.toJSONString();
+     // <?php
+      //$varphp = "document.write(grupoA)";
+      //echo varphp;
+      ?>
+
+      //Lo convierto a objeto
+      var jObject={};
+      for(i in grupoA)
+      {
+          jObject[i] = grupoA[i];
+      }
+       //Luego lo paso por JSON  a un archivo php llamado js.php
+
+    jObject= JSON.stringify(jObject);
+    $.ajax({
+            type:'post',
+             cache:false,
+             url:"agregarSorteo.php",
+            data:{jObject:  jObject},
+            success:function(server){
+            alert(server);//cuando reciba la respuesta lo imprimo
+
+               }
+     });
+     
 
 
       var numeroImagenActual1 =1;
