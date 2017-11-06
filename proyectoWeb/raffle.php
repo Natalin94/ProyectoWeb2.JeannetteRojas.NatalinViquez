@@ -24,6 +24,72 @@
 
   <body>
 
+    <?php
+    $user="postgres";
+    $password= "namavilo";
+    $dbname="Fifa_world_cup";
+    $port= "5432";
+    $host= "localhost";
+
+    $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+            
+    $conn = pg_connect($strconn) or die('{"estado":0}');
+
+    echo "<script type='text/javascript'>
+        var listaGuardada = localStorage.getItem('listaMundialistas');
+            listaGuardada = JSON.parse(listaGuardada);
+            var listaBase= [];
+          
+        </script>";
+              
+                $query= "select * from teams where state != false";
+              
+          $results= pg_query( $conn,$query) ;         
+          while ($row = pg_fetch_row($results)) {
+            
+                  echo "<script type='text/javascript'>var paises = 
+                  {country:'".$row[0]."', points:".$row[2]."};
+                  listaBase.push(paises);
+                    </script>";
+                }
+             echo "<script>
+             var nuevaLista=[];
+             for (j=0; j< listaBase.length; j++){
+              debugger;
+              var elemento= listaBase[j].country;
+              if (listaGuardada.indexOf(elemento) != -1 ){
+                nuevaLista.push(listaBase[j]);
+             }
+             }
+
+             listaBase.sort(function (a, b) {
+          if (a.points < b.points) {
+            return 1;
+          }
+          if (a.points > b.points) {
+            return -1;
+          }
+          
+          return 0;
+        });
+      var listaDeSeleccionadosFinales=[]
+      for (j=0; j< nuevaLista.length; j++){
+              listaDeSeleccionadosFinales.push(nuevaLista[j].country);
+            }
+            
+            var primerBomboE= listaDeSeleccionadosFinales.slice(0,7);
+            var segundoBomboE= listaDeSeleccionadosFinales.slice(7,15);
+            var tercerBomboE= listaDeSeleccionadosFinales.slice(15,23);
+            var cuartoBomboE= listaDeSeleccionadosFinales.slice(23,31);
+            //alert(primerBomboE);
+            //alert(segungoBomboE);
+            //alert(tercerBomboE);
+            //alert(cuartoBomboE);
+
+             </script>";
+    pg_close($conn);
+    ?>
+
     <script type="text/javascript">
       //funcion que escoge el equipo y la posicion de los primeros bombos
       var grupoA = [];
@@ -35,7 +101,7 @@
       var grupoG = [];
       var grupoH = [];
       var numeroImagenActual1 =1;
-      var primerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+     
       var primerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
       function moverImagenEquipos1(movimiento) { 
       if (numeroImagenActual1 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
@@ -371,7 +437,7 @@
       }
       //funcion que escoge el equipo y la posicion de los segundos bombos
       var numeroImagenActual2 =1;
-      var segundoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+     // var segundoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
       var segundoBomboP = ["2A","2B","2C","2D","2E","2F","2G","2H"];
       function moverImagenEquipos2(movimiento) { 
       if (numeroImagenActual2 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
@@ -726,7 +792,7 @@
       }
       //funcion que escoge el equipo y la posicion de los terceros bombos
       var numeroImagenActual3 =1;
-      var tercerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+     // var tercerBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
       var tercerBomboP = ["3A","3B","3C","3D","3E","3F","3G","3H"];
       function moverImagenEquipos3(movimiento) { 
       if (numeroImagenActual3 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
@@ -1080,7 +1146,7 @@
       }
       //funcion que escoge el equipo y la posicion de los cuartos bombos
       var numeroImagenActual4 =1;
-      var cuartoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
+     // var cuartoBomboE = ["Costa Rica","Russia","Brasil","Inglaterra","Holanda","Panama","Argentina","Africa"];
       var cuartoBomboP = ["4A","4B","4C","4D","4E","4F","4G","4H"];
       function moverImagenEquipos4(movimiento) { 
       if (numeroImagenActual4 == 1 &&  movimiento =='adelante') {//inicia bombo anfitrion, el siguiente es con 7
