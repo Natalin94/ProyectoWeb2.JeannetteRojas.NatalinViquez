@@ -141,7 +141,7 @@
       function validacion(formu, obj) {
         limite=1; //limite de checks a seleccionar
         num=0;
-        alert("HOLA")
+      
         if (obj.checked) {
     
           for (i=0; ele=document.getElementById(formu).children[i]; i++)
@@ -154,7 +154,6 @@
 
       function contar(confe, form){
         debugger;
-        alert(confe);
         var seleccionados_array = [];
         var noSeleccionados_array = [];
         seleccionadosUEFA_array= [];
