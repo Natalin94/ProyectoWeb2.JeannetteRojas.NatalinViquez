@@ -17,17 +17,13 @@ $tipo= $_REQUEST["tipo"];
 
 if($tipo=="insertar")
 {
-	//$grupoA=parseJSON($_GET['valorencapsulado']);
-	//echo $grupoA;
 
-	/*foreach ($equipo as $grupoA) {
-		echo "$equipo";
-		# code...
-		$query = "insert into grupoA values ('$equipo')";
-	}
-	*/
+	//$grupoA = $_POST['grupoA'];
+	//$grupoA = explode(',', $grupoA);
 
-	$data = json_decode($_POST['jObject'], true);
+	$grupoA=json_decode($_POST['jsondata']);
+
+	//$data = json_decode($_POST['jObject'], true);
     print_r($data[0]);//Imprimirá la primera posición del arreglo en este caso es un 2
     $query2 = "insert into grupoA values ('$data[0]',$data[1],$data[2],$data[3])";
 
