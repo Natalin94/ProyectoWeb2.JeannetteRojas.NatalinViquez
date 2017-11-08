@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/business-casual.css" rel="stylesheet">   
+    <script type="text/javascript" src="js/functions.js"></script>
 
   </head>
 
@@ -1587,7 +1588,7 @@
               <td>
                 <table width="100" align="center"border="1"><!--GrupoA-->
                   <thead>Grupo A</thead>
-                  <tr>                    
+                  <tr id="grupoA">                    
                     <tbody id="1A"></tbody>
                     <tbody id="2A"></tbody>
                     <tbody id="3A"></tbody>

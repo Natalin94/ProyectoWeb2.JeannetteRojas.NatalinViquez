@@ -145,7 +145,7 @@ function agregarUsuario()
 
 function agregarSorteo()
 {         
-  var id = document.getElementById("idtxt").value;
+  var id = document.getElementById("grupoA").value;
 
 //IMPLEMENTACION DEL PHP
   var peticion = obtenerXHR();
