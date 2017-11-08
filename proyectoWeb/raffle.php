@@ -128,6 +128,7 @@
      
 
 
+
       var numeroImagenActual1 =1;
       var primerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
       function moverImagenEquipos1(movimiento) { 
@@ -1527,6 +1528,8 @@
       }
       
     </script>
+
+    
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Raffle</div>
