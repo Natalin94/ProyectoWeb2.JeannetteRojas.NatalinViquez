@@ -41,16 +41,7 @@
     $query= "select * from sorteo";
     $results= pg_query( $conn,$query) ;
 
-     while ($row = pg_fetch_row($results)) {
-          echo $row[0];
-          $var= $row[0];
-          $query2= "select * from resultadoSorteo where idSorteo='$var';";
-          $results2= pg_query( $conn,$query2) ;
-          while ($row2 = pg_fetch_row($results2)) {
-            echo $row2[0];
-          }
-      }
-
+    
         
     pg_close($conn);
     ?>
@@ -125,16 +116,65 @@
           <div class="col-lg-6">
             <table >
               <?php
-              echo "<tr>
-                      <th>A</th>
-                      <th>B</th>
-                      <th>C</th>
-                      <th>D</th>
-                      <th>E</th>
-                      <th>F</th>
-                      <th>G</th>
-                      <th>H</th>
+              while ($row = pg_fetch_row($results)) {
+                      
+                     echo "<tr>
+                      <th id='A'>A</th>
+                      <th id='B'>B</th>
+                      <th id='C'>C</th>
+                      <th id='D'>D</th>
+                      <th id='E'>E</th>
+                      <th id='F'>F</th>
+                      <th id='G'>G</th>
+                      <th id='H'>H</th>
                     </tr>";
+                  $var= $row[0];
+                  $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+                  $conn = pg_connect($strconn) or die('{"estado":0}');
+                  $query2= "select * from resultadoSorteo where idSorteo='$var';";
+                  $results2= pg_query( $conn,$query2) ;
+                  while ($row2 = pg_fetch_row($results2)) {
+                    echo "<script type='text/javascript'>
+
+                      var fila='<td>".$row2[3]."</td>';
+                      var btn = document.createElement('TR');
+                      var probando='".$row2[1]."';
+                      if(probando[1] == 'A'){
+                        btn.innerHTML=fila;
+                        document.getElementById('A').appendChild(btn)
+                      }
+
+                      if(probando[1] == 'B'){
+                        btn.innerHTML=fila;
+                        document.getElementById('B').appendChild(fila)
+                      }
+                      if(probando[1] == 'C'){
+                        btn.innerHTML=fila;
+                        document.getElementById('C').appendChild(btn)
+                      }
+                      if(probando[1] == 'D'){
+                        btn.innerHTML=fila;
+                        document.getElementById('D').appendChild(btn)
+                      }
+                      if(probando[1] == 'E'){
+                        btn.innerHTML=fila;
+                        document.getElementById('E').appendChild(btn)
+                      }
+                      if(probando[1] == 'F'){
+                        btn.innerHTML=fila;
+                        document.getElementById('F').appendChild(btn)
+                      }
+                      if(probando[1] == 'G'){
+                        btn.innerHTML=fila;
+                        document.getElementById('G').appendChild(btn)
+                      }
+                      if(probando[1] == 'H'){
+                        btn.innerHTML=fila;
+                        document.getElementById('H').appendChild(btn)
+                      }             
+                    </script>";                   
+                  }
+              }
 
               ?>
             </table>
