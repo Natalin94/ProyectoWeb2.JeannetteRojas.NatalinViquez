@@ -24,6 +24,58 @@
 
   <body>
 
+     <?php
+
+
+    $user="postgres";
+    $password= "namavilo";
+    $dbname="Fifa_world_cup";
+    $port= "5432";
+    $host= "localhost";
+
+
+    $strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
+            
+    $conn = pg_connect($strconn) or die('{"estado":0}');
+
+    $query= "select * from sorteo";
+    $results= pg_query( $conn,$query) ;
+
+     while ($row = pg_fetch_row($results)) {
+          echo $row[0];
+          $var= $row[0];
+          $query2= "select * from resultadoSorteo where idSorteo='$var';";
+          $results2= pg_query( $conn,$query2) ;
+          while ($row2 = pg_fetch_row($results2)) {
+            echo $row2[0];
+          }
+      }
+
+        
+    pg_close($conn);
+    ?>
+
+
+      <style>
+      table, td, th {    
+          border: 1px solid #000;
+          text-align: left;
+        
+      }
+
+      table {
+          border-collapse: collapse;
+          width: 100%;
+          
+      }
+
+      th, td {
+          padding: 15px;
+      }
+
+
+      </style>
+
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">FIFA WORLD CUP</div>
     <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Result list</div>
 
@@ -48,7 +100,7 @@
               <a class="nav-link text-uppercase text-expanded" href="ranking.php">Ranking FIFA</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.html">Raffle</a>
+              <a class="nav-link text-uppercase text-expanded" href="seleccionarMundialistas.php">Raffle</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="list.html">Result List</a>
@@ -65,17 +117,27 @@
 
       <div class="bg-faded p-4 my-4">
         <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">About
-          <strong>Business Casual</strong>
+        <h2 class="text-center text-lg text-uppercase my-0"><strong>Raffles</strong>
         </h2>
         <hr class="divider">
         <div class="row">
+          
           <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="img/slide-2.jpg" alt="">
-          </div>
-          <div class="col-lg-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam soluta dolore voluptatem, deleniti dignissimos excepturi veritatis cum hic sunt perferendis ipsum perspiciatis nam officiis sequi atque enim ut! Velit, consectetur.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur perspiciatis reprehenderit illo et vitae iste provident debitis quos corporis saepe deserunt ad, officia, minima natus molestias assumenda nisi velit?</p>
+            <table >
+              <?php
+              echo "<tr>
+                      <th>A</th>
+                      <th>B</th>
+                      <th>C</th>
+                      <th>D</th>
+                      <th>E</th>
+                      <th>F</th>
+                      <th>G</th>
+                      <th>H</th>
+                    </tr>";
+
+              ?>
+            </table>
           </div>
         </div>
       </div>

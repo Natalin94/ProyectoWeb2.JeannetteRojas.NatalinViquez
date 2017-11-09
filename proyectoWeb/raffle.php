@@ -104,9 +104,6 @@
 
       JSON.stringify(grupoA);      
 
-      //grupoA = [ ].join(',')
-      //$.post('/agregarSorteo.php', {grupoA: grupoA})
-
 
       var numeroImagenActual1 =1;
       var primerBomboP = ["1A","1B","1C","1D","1E","1F","1G","1H"];
