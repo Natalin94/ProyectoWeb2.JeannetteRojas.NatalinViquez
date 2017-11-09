@@ -136,7 +136,7 @@
                   while ($row2 = pg_fetch_row($results2)) {
                     echo "<script type='text/javascript'>
 
-                      var fila='<td>".$row2[3]."</td>';
+                      var fila='<tr><td>".$row2[3]."</td></tr>';
                       var btn = document.createElement('TR');
                       var probando='".$row2[1]."';
                       if(probando[1] == 'A'){
