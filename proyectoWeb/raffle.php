@@ -102,7 +102,7 @@
       var grupoG = [];
       var grupoH = [];
 
-      JSON.stringify(grupoA);
+      JSON.stringify(grupoA);      
 
       //grupoA = [ ].join(',')
       //$.post('/agregarSorteo.php', {grupoA: grupoA})
